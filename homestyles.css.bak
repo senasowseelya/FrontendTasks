@@ -34,9 +34,8 @@ body{
  ul li{
 	 margin-left:-24px;
 	 margin-top:-9px;
-	 
+	 color:black;
 	 font-weight:15px;
-	 color:dimgrey;
 	
  }
   li:before {
@@ -75,7 +74,7 @@ body{
 	font-size:14px;
 	text-shadow:10px;
 	font-weight:600;
-	
+	color:dimgrey;
 	
 	
 	
