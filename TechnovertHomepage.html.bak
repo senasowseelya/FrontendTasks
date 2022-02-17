@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		
 		<link rel="stylesheet" href="homestyles.css">
 		<title>
 			Homepage
@@ -14,25 +13,19 @@
 			<b><a href="services.html">SERVICES</a></b>
 			<b><a href="careers.html">CAREERS</a></b>
 			<b><a href="contact.html">CONTACT</a></b>
-			<img src="blog-icon.png" style="float:right;padding: 5px 25px; height:70%;">
-			
+			<img src="blog-icon.png" style="float:right; height:70%;">
 		</div>
 		<div class="newsDiv">
-			<h2 style="margin-left:1.5%;margin-top:10px;">NEWS</h2>
-			<ul  style="list-style-type:none;">
+			<h2 class="newsHeading">NEWS</h2>
+			<ul>
 			<li>Technovert is now Microsoft partner in Information Security Solutions</li><br>
 			<li> We deliver one of the larges book information stores in the world</li><br>
 			<li>Our team deliered the first Windows 8 Metro style application for the Windows Phone group at Microsoft</li><br>
-			<li>Technovert partners with a strategic technology CTO group</li></b><br>
-			
+			<li>Technovert partners with a strategic technology CTO group</li></b>
 			</ul>
-		
-			
-			
-			
 		</div>
 		<div class="welcome">
-			<h2 style="margin-left:20px; color:black"> Welcome!</h2>
+			<h2 class="welcomeMsg"> Welcome!</h2>
 			<p>
 				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vulputate, felis venenatis tristique pulvinar, felis arcu congue ante, at dictum turpis metus ac risus.
 				Nunc pulvinar enim eros, et interdum purus. Nam lacinia neque et ipsum sollcitudin vel laoreet diam laoreet. Pellentesque tempus vulputate enim, quis vulputate
