@@ -41,25 +41,6 @@
   font-weight:50px;
   
 }
-@media (min-width:1050px)
-{
-
-p{
-	margin-left:2%;
-}
-body{
-	font-family: gadugi,Arial,Calibri;
-	color:#333333;
-	text-shadow:10px;
-	margin-left:0;
-	margin-right:0;
-	margin-top:0;
-	width:1500px;
-	font-weight:600;
-	
-	
-	
-}
 
  ul{
 	 list-style-type:none;
@@ -79,6 +60,29 @@ body{
 		
 		
  }
+
+@media (min-width:1050px)
+{
+	 body{
+	font-family: gadugi,Arial,Calibri;
+	color:#333333;
+	text-shadow:10px;
+	margin-left:0;
+	margin-right:0;
+	margin-top:0;
+	width:1500px;
+	font-weight:600;
+	overflow:hidden;
+	
+	
+	
+}
+
+p{
+	margin-left:2%;
+}
+
+
  
 .newsDiv{
 	margin-left:50px;
@@ -142,5 +146,4 @@ p{
 	
 	
 }
-
 

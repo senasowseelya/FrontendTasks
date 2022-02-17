@@ -26,7 +26,7 @@
 	height:36px;
 	margin-right:-50px;
 	font-weight:25px;
-	width:100%;
+	
 	}
 
 .NavBar a {
@@ -40,25 +40,6 @@
   font-family: gadugi,Arial,Calibri;
   font-weight:50px;
   
-}
-@media (min-width:1050px)
-{
-
-p{
-	margin-left:2%;
-}
-body{
-	font-family: gadugi,Arial,Calibri;
-	color:#333333;
-	text-shadow:10px;
-	margin-left:0;
-	margin-right:0;
-	margin-top:0;
-	width:1500px;
-	font-weight:600;
-	
-	
-	
 }
 
  ul{
@@ -79,6 +60,29 @@ body{
 		
 		
  }
+
+@media (min-width:1050px)
+{
+	 body{
+	font-family: gadugi,Arial,Calibri;
+	color:#333333;
+	text-shadow:10px;
+	margin-left:0;
+	margin-right:0;
+	margin-top:0;
+	width:1500px;
+	font-weight:600;
+	overflow:hidden;
+	
+	
+	
+}
+
+p{
+	margin-left:2%;
+}
+
+
  
 .newsDiv{
 	margin-left:50px;
@@ -139,8 +143,46 @@ p{
 		font-family: gadugi,Arial,Calibri;
 		font-weight:600;
 	}
+	.header
+{
+	background-color:#3399CC;
+	height:110px;
+	margin-right:-50px;
+	color:#FFFFFF;
+	font-family:myFirstFont;
+	font-size:50px;
+	text-align:left;
+	vertical-align:center;
+	padding-left:24px;
+	line-height:119px;
+}
+.newsHeading
+ {
+	 margin-left:1.5%;margin-top:4px;
+ }
+
+.NavBar{
+	display:block;
+	background-color:#333333;
+	height:36px;
+	margin-right:-50px;
+	font-weight:25px;
+	
+	}
+
+.NavBar a {
+  float: left;
+  color:white;
+  text-shadow: 0.5px;
+  text-align: center;
+  padding :7px 0.2px 2px 30px;
+  text-decoration: none;
+  font-size: 17px;
+  font-family: gadugi,Arial,Calibri;
+  font-weight:50px;
+  
+}
 	
 	
 }
-
 
