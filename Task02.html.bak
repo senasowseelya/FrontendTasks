@@ -10,15 +10,16 @@
 		<a href="client.html"> Client Login</a>
 		<a href="export.html"> Vehicle Export Portal</a>
 		</div>
+		<br>
 		 <div class="content">
 		 <div class="first">
 			 <img src="logo.png" class="logo">
 			 <div class="menu">
-			 <a href="home.html"> HOME</a>
-			 <a href="about.html">ABOUT FTZWS</a>
-			 <a href="services.html">OUR SERVICES </a>
-			 <a href="clients.html">OUR CLIENTS</a>
-			 <a href="contact.html">CONTACT US</a>
+			 <a href="home.html">&nbsp HOME &nbsp </a>
+			 <a href="about.html">&nbsp ABOUT FTZWS &nbsp </a>
+			 <a href="services.html">&nbsp OUR SERVICES &nbsp </a>
+			 <a href="clients.html">&nbsp OUR CLIENTS &nbsp </a>
+			 <a href="contact.html">&nbsp CONTACT US &nbsp </a>
 			 </div>
 		 </div>
 		 
@@ -34,7 +35,7 @@
 				<a href="more.html" >More about Free Trade Zones ></a>
 			</div>
 			<div class="frame">
-			<img class="tile1" src="tile2.png">
+			<img class="tile2" src="tile2.png">
 				<p>FTZ World Services is your ticket to the world. Were the licensed operator of the Miami Free Trade Zone, the "Gateway to the Americas." We process as much as Si billion in goods from more than 70 countries each year. </p>
 				<p>A leader in free trade zone operations, FTZ works magic behind the scenes, offering logistical a. operational excellence. FTZ's many services include technology, public warehousing, yard storage a. on-site U.S. Customs. Other U.S. free trade zones also benefit from our technological support a. operational consulting. </p>
 				<a href="request.html">Request a Quote ></a>
@@ -47,7 +48,7 @@
 			</div>
 		</div>
 		<div class="decor">
-			<h6 class ="copyright"> Copyright @ 2010 FT, World Services. All rights reserved. <a href="">Contact us </a> | <a href="">Request a Quote </a></h6>
+			<h6 class ="copyright"> Copyright @ 2010 FTZ World Services. All rights reserved. <a href="">Contact us </a> | <a href="">Request a Quote </a></h6>
 		</div>
 		<br>
 	</body>

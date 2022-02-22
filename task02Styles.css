@@ -5,6 +5,7 @@ body
 	background-image:url('bg.jpg');
 	background-repeat:no-repeat;
 	background-size:cover;
+	
 }
 .content{
 	width:1030px;
@@ -36,7 +37,7 @@ body
 {
 outline: 0.2px solid rgba(255,255,255,0.15);
 outline-offset: -4px;
-background-color:rgba(20,44,68,0.8);
+background-color:rgba(20,44,68); 	
 height:45px;
 width:1030px;
  	
@@ -45,10 +46,11 @@ width:1030px;
 {
 	position:relative;
     z-index:1;
-	margin-top:-5.3%;
-	margin-left:1.2%;
-	width:25%;
-	height:350%;
+	margin-top:-3%;
+	margin-left:3.5%;
+
+	width:15%;
+	height:250%;
 }
 .menu a{
 	
@@ -56,7 +58,7 @@ width:1030px;
 .menu{
 	width:700px;
 	height:20px;
-	margin-top:-9%;
+	margin-top:-7%;
 	margin-left:28%;
 	
 }
@@ -107,12 +109,25 @@ outline-offset:-4px;
 height:500px;
 	
 }
+
+.tile3
+{
+	height:30%;
+	margin-top:-1px;
+	
+	width:100%;
+}
 .tile1
 {
-	width:90%;
-	height:70%;
+	width:100%;
+	height:30%;
+	filter :brightness(2);
 }
-
+.tile2
+{
+	height:30%;
+	
+}
 .frame{
     float:left;
     width:29%;
@@ -129,23 +144,16 @@ height:500px;
 }
 
 .frame.frame {
-    background-color:rgba(20,44,68,0.8);
+    background-color:rgba(20,44,68);
 }
 .decor{
 	margin-top:170px;
 	margin-left:17.7%;
 	height:25px;
 	width:1030px;
-	background-color:rgba(20,44,68,0.8);
+	background-color:rgba(20,44,68);
 }
-.tile3
-{
-	width:100%;
-}
-.tile1
-{
-	height:30%;
-}
+
 .copyright
 {
 	
