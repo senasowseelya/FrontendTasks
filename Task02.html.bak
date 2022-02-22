@@ -14,7 +14,7 @@
 		 <div class="first">
 			 <img src="logo.png" class="logo">
 			 <div class="menu">
-			 <a href="home.html">HOME</a>
+			 <a href="home.html"> HOME</a>
 			 <a href="about.html">ABOUT FTZWS</a>
 			 <a href="services.html">OUR SERVICES </a>
 			 <a href="clients.html">OUR CLIENTS</a>
@@ -47,7 +47,7 @@
 			</div>
 		</div>
 		<div class="decor">
-			<h6 class ="copyright"> Copyright @ 2010 FT, World Services. All rights reserved.<a href=""> Contact us </a> | <a href=""> Request a Quote </a></h6>
+			<h6 class ="copyright"> Copyright @ 2010 FT, World Services. All rights reserved. <a href="">Contact us </a> | <a href="">Request a Quote </a></h6>
 		</div>
 		<br>
 	</body>
