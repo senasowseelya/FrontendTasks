@@ -1,8 +1,7 @@
 body
 {
 	font-family:'Trebuchet MS';
-    
-	margin:0;
+    margin:0;
 	background-image:url('bg.jpg');
 	background-repeat:no-repeat;
 	background-size:cover;
@@ -10,9 +9,8 @@ body
 .content{
 	width:1030px;
 	height:550px;
-	margin-left:270px;
-	margin-top:35px;
-	
+	margin-left:16%;
+	margin-right:14.7%;
 }
 .options{
 	margin-left:64.5%;
@@ -35,6 +33,8 @@ body
 }
 .active
 {
+	padding-left:2px;
+	padding-right:2px;
 	padding-top:3px;
 	padding-bottom:3px;
  background-color:#48687e;
@@ -44,7 +44,7 @@ body
 {
 outline: 0.2px solid rgba(255,255,255,0.15);
 outline-offset: -4px;
-background-color:rgba(20,44,68);
+background-color:rgba(0,0,0,0.7); 
 height:45px;
 width:1030px;
 }
@@ -56,9 +56,7 @@ width:1030px;
 	width:15%;
 	height:250%;
 }
-.menu a{
 
-}
 .menu{
 	width:700px;
 	height:20px;
@@ -87,7 +85,7 @@ width:1030px;
 .second
 {
 	
-	height:20px;
+	height:15px;
 	width:1030px;
 	font-size:24px;
 	padding-top:30px;
@@ -124,7 +122,7 @@ outline-offset:-4px;
 height:500px;
 padding:25px;
 font-size:15px;	
-background-color:rgba(20,44,68);
+background-color:rgba(0,0,0,0.7); 
 	
 }
 h3
@@ -140,12 +138,15 @@ h3
 {
 	width: 65%; 
 	color:rgba(255,255,255,0.8);
-	font-size:17px;
+	font-size:15px;
+	letter-spacing:0.5px;
 	float:right;
 }
 .rightDiv a{
 	color:skyblue;
 	text-decoration:underline;
+	text-underline-offset: 2px;
+	
 }
 .rightDiv p{
 	
@@ -159,12 +160,12 @@ h3
   background-color:#1b567a;
   border: none;
   color: white;
-  padding:4px;
+  padding:5px;
   text-align: center;
   text-decoration: none;
   font-size: 11px;
   margin: 2px;
-  border:1px solid dimgrey;
+  
   height:50%;
   border-radius:4px;
   background-image:linear-gradient(#145C78,#0c293D);
@@ -175,11 +176,13 @@ h3
 }
 	
 .leftBottom{
-	width:45%;
-	
+	width:80%;
+	text-decoration:underline;
+	text-underline-offset: 2px;
 	border-top: 0.2px solid rgba(255,255,255,0.15);
 	border-bottom: 0.2px solid rgba(255,255,255,0.15);
-	padding:12px;
+	padding-top:12px;
+	padding-bottom:12px;
 	
 }
 .leftBottom a
@@ -194,7 +197,8 @@ h3
 	border-top: 0.2px solid rgba(255,255,255,0.15);
 	border-bottom: 0.2px solid rgba(255,255,255,0.15);
 	padding:10px;
-	background-color:rgba(20,44,68);
+	background-color:rgba(16,34,58,0.7);
+	
 	padding-left:20px;
 	
 	
@@ -216,13 +220,16 @@ h3
 }
 .copyright a{
 	 color:rgba(255,255,255,0.5);
+	 text-decoration:underline;
+	text-underline-offset: 2px;
 	 
 }
 .decor{
 	margin-top:5px;
 	height:25px;
 	width:1030px;
-	background-color:rgba(20,44,68);
+	background-color:rgba(0,0,0,0.7); 
+	
 }
 h6
 {
