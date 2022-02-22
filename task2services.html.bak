@@ -11,17 +11,22 @@
 			<a href="export.html"> Vehicle Export Portal</a>
 		</div>
 		
-		
+		<br>
 		<div class="content">
 			
 			<div class="first">
 				 <img src="logo.png" class="logo">
 				 <div class="menu">
 				 <a href="Task02.html">&nbsp HOME &nbsp </a>
+				 <div class="pipe">|</div>
 				 <a href="task2Services.html">&nbsp ABOUT FTZWS &nbsp </a>
+				 <div class="pipe">|</div>
 				 <a class="services" href="task2Services.html" ><span class="active" >&nbsp OUR SERVICES &nbsp</span></a>
+				 <div class="pipe">|</div>
 				 <a href="task2Services.html">&nbsp OUR CLIENTS &nbsp </a>
+				 <div class="pipe">|</div>
 				 <a href="task2Services.html">&nbsp CONTACT US &nbsp </a>
+				 
 				 
 			</div>
 		 </div>
