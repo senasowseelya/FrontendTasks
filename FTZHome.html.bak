@@ -1,10 +1,11 @@
 <!DOCTYPE Html>
 <html>
 <head>
-<link rel="stylesheet" href="task02Styles.css">
+<link rel="stylesheet" href="FTZstyles.css">
 <title> Task 2</title>
 </head>
 	<body>
+	<div class="container">
 		<div class="options">
 		<a href="request.html"> Request a Quote</a>
 		<a href="client.html"> Client Login</a>
@@ -15,15 +16,15 @@
 		<div class="first">
 			 <img src="logo.png" class="logo">
 			 <div class="menu">
-			 <a href="task02.html">&nbsp HOME &nbsp </a>
-			 <a href="task02.html">&nbsp ABOUT FTZWS &nbsp </a>
-			 <a href="task2services.html">&nbsp OUR SERVICES &nbsp </a>
-			 <a href="task02.html">&nbsp OUR CLIENTS &nbsp </a>
-			 <a href="ctask02.html">&nbsp CONTACT US &nbsp </a>
+			 <a href="#">&nbsp HOME &nbsp </a>
+			 <a href="#">&nbsp ABOUT FTZWS &nbsp </a>
+			 <a href="FTZServices.html">&nbsp OUR SERVICES &nbsp </a>
+			 <a href="#">&nbsp OUR CLIENTS &nbsp </a>
+			 <a href="#">&nbsp CONTACT US &nbsp </a>
 			 </div>
 		 </div>
 		 
-		 <div class="second">
+		 <div class="Home-second">
 			<h2 class="msg1">  B R I N G I N G   &nbsp T E C H N O L O G Y </h2>
 			<h2 class="msg2">  A N D &nbsp O P E R A T I O N A L &nbsp E X C E L L E N C E .</h2>
 		 </div>
@@ -47,10 +48,11 @@
 			</div>
 			</div>
 		</div>
-		<div class="decor">
+		<div class="footer">
 			<h6 class ="copyright"> Copyright @ 2010 FTZ World Services. All rights reserved. <a href="">Contact us </a> | <a href="">Request a Quote </a></h6>
 		</div>
 		<br>
+		</div>
 	</body>
 </html>
 	

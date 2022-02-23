@@ -1,17 +1,56 @@
 body
 {
 	font-family:'Trebuchet MS';
-    margin:0;
-	background-image:url('bg.jpg');
+	background-image:url('bg1.jpg');
 	background-repeat:no-repeat;
 	background-size:cover;
+	margin:0;
+}
+.container
+{
+	margin:auto;
+}
+.container .footer{
+	
+	margin-top:170px;
+	margin-left:16%;
+	margin-right:14.7%;
+	height:25px;
+	width:1030px;
+	background-color:rgba(0,0,0,0.7); ;
+
+	margin:auto;
+	margin-top:215px;
+}
+.container .services-footer{
+	margin:auto;
+	margin-top:135px;
+	height:25px;
+	width:1030px;
+	background-color:rgba(0,0,0,0.7); 
+	
+}
+.container .options
+{
+	margin-right:auto;
+}
+.main
+{
+	
+	width:1030px;
+	height:550px;
+	margin:auto;
+}
+.main .options{
+	float:right;
 }
 .content{
 	width:1030px;
 	height:550px;
-	margin-left:16%;
-	margin-right:14.7%;
+	margin:auto;
+	margin-top:25px;
 }
+
 .options{
 	margin-left:63.5%;
 	width:300px;
@@ -31,6 +70,17 @@ body
 	content: " | ";
     color:skyblue;;
 }
+
+.first
+{
+outline: 0.2px solid rgba(255,255,255,0.15);
+outline-offset: -4px;
+background-color:rgba(0,0,0,0.7); 	
+height:45px;
+width:1030px;
+letter-spacing:0.5px;
+ 	
+}
 .active
 {
 	padding-left:8px;
@@ -40,20 +90,12 @@ body
 	margin-left:-16.5px;
 	margin-right:-17px;
     width:15px;
-	
- background-color:#48687e;
-}
-	
-.first
-{
-outline: 0.2px solid rgba(255,255,255,0.15);
-outline-offset: -4px;
-background-color:rgba(0,0,0,0.7); 
-height:45px;
-width:1030px;
+	background-color:#48687e;
+	border-radius:8px;
 }
 .logo
-{position:relative;
+{
+	position:relative;
     z-index:1;
 	margin-top:-3%;
 	margin-left:3.5%;
@@ -65,7 +107,7 @@ width:1030px;
 	width:700px;
 	height:20px;
 	margin-top:-7%;
-	margin-left:25%;
+	margin-left:31%;
 	
 }
 .first a{
@@ -75,21 +117,24 @@ width:1030px;
 }
 
 
-.first .active{
-	
-	background:rgb(255,255,255,0.3);
-	border-radius:5px;
-}
 .first a + a:before{
 	content: " | ";
-    padding: 0 10px;
+    padding: 0 7px;
 	color:white;
 }
-
 .second
 {
 	
 	height:15px;
+	width:1030px;
+	font-size:24px;
+	padding-top:30px;
+	
+}
+.Home-second
+{
+	background-color:rgba(0,0,0,0.4); 
+	height:140px;
 	width:1030px;
 	font-size:24px;
 	padding-top:30px;
@@ -112,9 +157,31 @@ width:1030px;
     font-weight: lighter;
 	margin:0%;
 	margin-left:2.5%;
-	
 	color:white;
 	
+}
+
+
+
+.copyright
+{
+	
+	text-align:center;
+	font-size:12px;
+	color:rgba(255,255,255,0.5);
+	line-height:24px;
+}
+.copyright a{
+	text-decoration:underline;
+	text-underline-offset: 2px;
+	 color:rgba(255,255,255,0.5);
+	 
+}
+
+
+h6
+{
+	margin:0;
 }
 .frameSet
 {
@@ -124,10 +191,20 @@ font-weight: lighter;
 outline: 0.2px solid rgba(255,255,255,0.2);
 outline-offset:-4px;
 height:500px;
-padding:25px;
 font-size:15px;	
 background-color:rgba(0,0,0,0.7); 
 	
+}
+.Services-frameSet
+{
+font-family:'Trebuchet MS';
+font-weight: lighter;
+outline: 0.2px solid rgba(255,255,255,0.3) ;
+outline-offset:-4px;
+height:500px;
+font-size:15px;	
+background-color:rgba(0,0,0,0.7); 
+padding:25px;
 }
 h3
 {
@@ -152,9 +229,7 @@ h3
 	text-underline-offset: 2px;
 	
 }
-.rightDiv p{
-	
-}
+
 .para
 {
 	margin:6px;
@@ -169,7 +244,6 @@ h3
   text-decoration: none;
   font-size: 11px;
   margin: 2px;
-  
   height:50%;
   border-radius:4px;
   background-image:linear-gradient(#145C78,#0c293D);
@@ -202,42 +276,55 @@ h3
 	border-bottom: 0.2px solid rgba(255,255,255,0.15);
 	padding:10px;
 	background-color:rgba(16,34,58,0.7);
-	
 	padding-left:20px;
-	
-	
-	
 }
 
-.heading
+.tile3
 {
-	color:skyblue;
+	height:30%;
+	
+	width:100%;
+}
+.tile1
+{
+	width:105%;
+	height:30%;
+	filter :brightness(2);
+}
+.tile2
+{
+	
+	width:105%;
+	height:30%;
+	
+}
+.frame{
+    float:left;
+    width:29%;
+    height:91.2%;
+	font-size:14px;
+	font-weight:lighter;
+	letter-spacing:0.5px;
+    overflow:auto;
+	color:rgba(255,255,255,0.7);
+	padding:20px;
+	
+	
+	
+}
+.frame a {
+	
+	text-decoration:underline;
+	text-underline-offset: 2.1px;
+	color:skyblue;;
 }
 
-.copyright
-{
-	
-	text-align:center;
-	font-size:12px;
-	color:rgba(255,255,255,0.5);
-	line-height:22px;
-}
-.copyright a{
-	 color:rgba(255,255,255,0.5);
-	 text-decoration:underline;
-	text-underline-offset: 2px;
-	 
-}
-.decor{
-	margin-top:5px;
-	height:25px;
-	width:1030px;
-	background-color:rgba(0,0,0,0.7); 
-	
-}
-h6
-{
-	margin:0;
-}
+
+
+
+
+
+
+
 
 
