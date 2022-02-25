@@ -161,11 +161,15 @@ button{
     width: 3%;
     margin-top: -5px;
 }
-.third .bridal-registry 
+
+.third .bridal-registry-link
 {
-    text-decoration:none;
-    
-    
+    float:right;
+    margin-right: 238px;
+}
+.third .bridal-registry-link a
+{
+    text-decoration: none;
 }
 .menu
 {
