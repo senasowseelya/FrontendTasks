@@ -6,7 +6,7 @@ body
 .container
 {
     margin:auto;
-    width:1060px;
+    width:900px;
     height:700px;
     
 }
@@ -20,7 +20,7 @@ body
     float:left;
     width:1060px;
     height:40px;
-    font-size: 14px;
+    font-size: 13px;
     line-height:2;
 
 }
@@ -31,7 +31,7 @@ body
 }
 .navbar
  {
-    margin-left: 445px;
+    margin-left: 325px;
     margin-top: -35px;
     padding: 4px;
     
@@ -47,7 +47,7 @@ body
 {
     
     padding-left:19px;
-    margin-top:-28px;
+    margin-top:-25px;
 }
 ul{
     list-style-type:none;
@@ -66,28 +66,31 @@ ul{
     
     float:left;
     font-size: 14px;;
-    width:1460px;
-    margin-left:-200px;
+    width: 1897px;
+    margin-left: -56%;
     height:28px;
     border-top:2px solid #D9D7D8;
     border-bottom:2px solid #D9D7D8;
     line-height: 2.3;
+    padding:2px;
     
     
 }
 .second .Dining
 {
-    padding-left: 205px;
-    margin-left: -40px;
+    
+        padding-left: 510px;
+        margin-left: -42px;
     
 }
 .second li
 {
-    padding-left:20px;
-    padding-right:20px;
+    padding-left:15px;
+    padding-right:15px;
     background-color: #D9D7D8;
     margin-right:1px;
     font-size:12px;
+    float:left;
    
 }
 .second a{
@@ -100,18 +103,17 @@ ul{
 }
 
 
-.second li
-{
-    padding-left: 25.5px;
-    padding-right: 25.5px;
-    float:left;
-}
+
 
 .second .search
 {
     background-color:#D9D7D8;
-    padding-left: 117px;
-    padding-right: 190px;
+    padding-left: 85px;
+    padding-right: 26.5%;
+    
+    
+        
+
 }
 .second .textfield
 {
@@ -119,6 +121,10 @@ ul{
     font-size:10px;
     margin-right:5px;
     width:150px;
+    
+    border:2px solid white;
+border-style: inset;
+       
 }
 .go
 {
@@ -134,13 +140,14 @@ button{
 {
     float:left;
    margin: top 10%;;
-   margin-left: -200px;
-   width:1460px;
+   width: 1825px;
+   margin-left: -56%;
    height:30px;
    font-size: 14px;
    border-bottom:2px solid #D9D7D8;
    line-height:0.5;
    color:#404F76;
+   padding-left:75px;
     
   
 }
@@ -152,21 +159,24 @@ button{
 }
 .third .first-item
 {
-    padding-left:170px;
+    padding-left: 392px;
 }
+
 .bride
 {
-    margin-left: 24.5%;
-    height: 70%;
+    margin-left: 7%;
+    height: 90%;
     width: 3%;
-    margin-top: -5px;
+    margin-top: -12px;
+    
 }
 
 .third .bridal-registry-link
 {
     float:right;
-    margin-right: 238px;
     
+    margin-right: 596px;
+    margin-top: -4px;
 }
 .third .bridal-registry-link a
 {
@@ -182,8 +192,8 @@ button{
 
 .fourth
 {
-    width:1060px;
-    height:445px;
+    width: 884px;
+    height: 376px;
     border-left:5px solid white;
     border-right:5px solid white;
     border-bottom:5px solid white;
@@ -195,6 +205,12 @@ button{
 .fourth li
 {
     padding: 0;
+}
+.third .bullet
+{
+    color: grey;
+    width:5px;
+
 }
 
 .fourth .right .for-line
@@ -214,6 +230,7 @@ button{
 .recipe
 {
     width:100%;
+    height: 118%;
     
     
 }
@@ -221,7 +238,7 @@ button{
     
     float: left;
     width:70%;
-    height:61%;
+    height: 84.5%;
     border-right:5px solid white;
     
 }
@@ -232,16 +249,16 @@ button{
 }
 .right
 { 
-    
-    background-color:rgba(0,0,0,0.7);; 
+    font-family:Segoe UI light;
+    background-color: rgba(0,0,0,0.8);
     float: left;
-    color:white;
-    height: 345px;
-    width: 213px;
+    color: white;
+    height: 330px;
+    width: 200px;
     outline: 0.2px solid rgba(255,255,255,0.2);
-    outline-offset:-7px;
-    padding:50px;
-    font-size:14px;
+    outline-offset: -7px;
+    padding:15px 30px 30px 30px;
+    font-size: 14px;
     text-align: left;
 } 
 
@@ -249,9 +266,9 @@ button{
 {
 
     margin-left: 0.5%;
-    width:1060px;
-    height:26%;
-    font-size:13px;
+    width: 885px;
+    height:26.2%;
+    font-size:14px;
     border:5px solid black;
     background-color: white;
 }
@@ -273,39 +290,59 @@ button{
 {
     position: absolute;
     text-decoration: none;
-    margin-top: 27px;
-    margin-left: 200px;
+    margin-top: 18px;
+    margin-left: 180px;
+}
+
+.see-links-accents
+{
+    position: absolute;
+    text-decoration: none;
+    margin-top: 16px;
+    margin-left: 160px;
+
 }
 .see-links-clear
 {
     position: absolute;
     text-decoration: none;
-    margin-top: 27px;
-    margin-left:10px;
+
     
 } 
 .see-links-clear a{
     text-decoration: none;
-    color:rgba(0,0,0,0.5);
+    color: navy;
+    opacity:0.7;
 }   
 
 .fifth-right-content
 {
-    padding:10px 6px 10px 10px;
-    color:rgba(0,0,0,0.5);
-    float:left;
-    width:42%;
+    padding: 10px 0px 10px 10px;
+    color: rgba(0,0,0,0.5);
+    font-size: 14px;
+    float: left;
+    width: 47%;
 }
+.see-links-accents a{
+    text-decoration: none;
+    color: navy;
+    opacity:0.7;
+} 
+.see-links a{
+    text-decoration: none;
+    color: navy;
+    opacity:0.7;
+} 
 .fifth-right-image
 {
     float:right;
     margin-top: 27.5px;
-    width: 37.5%;
+    width: 47.5%;
 }
 
 .fifth-left .fifth-left-top
 {
-    padding:10px 6px 10px 10px;
+    padding: 10px 10px 10px 10px;
 }
 h5,h3{
     margin:0;
@@ -352,7 +389,7 @@ h5,h3{
 }
 .child-footer-right
 {
-    width: 27.5%;
+    width: 42.5%;
     
     float:right;
     font-size:12px;
