@@ -1,0 +1,570 @@
+<html>
+    <head>
+        <title>Saketa</title>
+        <link rel="stylesheet" href="saketaStyles.css">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/solid.css">
+		
+    </head>
+    <body id="body">
+
+        <div id="container">
+        <div class="header">
+			<div class="left">
+            <div class="saketa"><img class="saketa-img" src="saketa.png"></div>
+            <div class="tag">
+			<h2 class="emp-dir-heading">Employee Directory</h2>
+            <h5 class="tagline">The Ultimate People Directory Experience</h5>
+			</div>
+			</div>
+			<div class="welcome">
+				<div class="child1"><h2>Welcome,</h2></div>
+				<div class="child2"><h3>Andrew Philips</h3></div>
+				<img src="philips.png" class="profile">
+				
+				
+			</div>
+		</div>
+		
+		<div class="line"></div>
+		<br></br>
+		<div class="left-div">
+			<div id="left-content">
+				<h4>Departments</h4>
+				<div id="myData"></div>
+				<!--loading list data-->
+				<script>
+					var existingData=
+							[
+							{
+							"firstName":"Anthony",
+							"lastName":"Morris",
+							"preferredName" :"Anthony",
+							"email":"anthony123@gmail.com",
+							"jobTitle":"SharePoint Practice Head",
+							"office":"Seattle",
+							"department":"IT",
+							"phoneNumber":"8464832529",
+							"skypeId":"antony123",
+							"pic":"Antony.png"
+
+							},
+							{
+							"firstName":"Helen",
+							"lastName":"Zimmerman",
+							"preferredName" :"Helen",
+							"email":"Helen@gmail.com",
+							"jobTitle":"Operations Manager",
+							"office":"India",
+							"department":"IT",
+							"phoneNumber":"98738738888",
+							"skypeId":"Helen124",
+							"pic":"Helen.png"
+
+							},
+							{
+							"firstName":"Jonathon",
+							"lastName":"Smith",
+							"preferredName" :"Jonathon",
+							"email":"john@gmail.com",
+							"jobTitle":"Product Manager",
+							"office":"Seattle",
+							"department":"IT",
+							"phoneNumber":"987834807",
+							"skypeId":"jonathon@123",
+							"pic":"Jonathan.png"
+
+							},
+							{
+							"firstName":"Tami",
+							"lastName":"Hopkins",
+							"preferredName" :"Tami",
+							"email":"Tami@123@gmail.com",
+							"jobTitle":"LeadEngineer-Dot Net",
+							"office":"India",
+							"department":"IT",
+							"phoneNumber":"8975834957",
+							"skypeId":"Tami@123",
+							"pic":"Tami.png"
+
+							},
+							{
+							"firstName":"Franklin",
+							"lastName":"Humark",
+							"preferredName" :"Franklin",
+							"email":"franklin@123",
+							"jobTitle":"Network Engineer",
+							"office":"Seattle",
+							"department":"IT",
+							"phoneNumber":"734987090",
+							"skypeId":"Franklin@123",
+							"pic":"franklin.png"
+
+							},
+							{
+								"firstName":"Angela",
+								"lastName":"Bailey",
+								"preferredName" :"Angela",
+								"email":"Angela@123",
+								"jobTitle":"Talent Manager Jr.",
+								"office":"Seattle",
+								"department":"HR",
+								"phoneNumber":"734987090",
+								"skypeId":"Angela@123",
+								"pic":"Angela.png"
+								},
+							{
+									"firstName":"Robert",
+									"lastName":"Mitchell",
+									"preferredName" :"Robert",
+									"email":"Robert@123",
+									"jobTitle":"Software Engineer",
+									"office":"Seattle",
+									"department":"IT",
+									"phoneNumber":"734987090",
+									"skypeId":"Robert@123",
+									"pic":"Robert.png"
+
+									
+									
+								},
+							{
+										"firstName":"Olivia",
+										"lastName":"Humark",
+										"preferredName" :"Olivia",
+										"email":"olivia@123",
+										"jobTitle":"UI designer",
+										"office":"Seattle",
+										"department":"UX",
+										"phoneNumber":"734987090",
+										"skypeId":"Olivia@123",
+										"pic":"Olivia.png"
+										}
+
+
+							]
+						appendData(existingData);
+						function appendData(data) {
+
+							var mainContainer = document.getElementById("myData");
+							var dept={};
+							var offices={};
+							var jobs={};
+							for (var i = 0; i < data.length; i++) 
+							{
+								if(data[i].department in dept)
+									dept[data[i].department]+=1;
+								else
+								dept[data[i].department]=1;
+
+								if(data[i].office in offices)
+									offices[data[i].office]+=1;
+								else
+								offices[data[i].office]=1;
+
+								if(data[i].jobTitle in jobs)
+								 jobs[data[i].jobTitle]+=1;
+								else
+								jobs[data[i].jobTitle]=1;
+
+
+						    }
+							
+							var div = document.createElement("div");
+							for (const key of Object.keys(dept)) {
+    							div.innerHTML+=key + "(" + dept[key]+")"+"<br>";
+							}
+							div.innerHTML+="<br> <h3> Office </h3> <br>";
+							for (const key of Object.keys(offices)) {
+    							div.innerHTML+=key + "(" + offices[key]+")"+"<br>";
+							}
+							div.innerHTML+="<br> <h3> Job Titles </h3> <br>";
+							for (const key of Object.keys(jobs)) {
+    							div.innerHTML+=key + "(" + jobs[key]+")"+"<br>";
+							}
+							
+							mainContainer.appendChild(div);
+						}
+					</script>
+				
+		
+			
+			
+			
+			
+			<br>
+			<a class="view-more" href="#"><b>view more</b></a>
+		</div>
+		</div>
+		
+
+		<div class="right-div">
+			
+			<div class="row1">
+				<img class="contact-pic" src="contact.png" onclick="getCards(existingData)">
+				<div id="buttonsContainer">
+				<script>
+					
+					const buttonsContainer = document.getElementById("buttonsContainer");
+					for (let i = 65; i < 91; i++) {
+					const button = document.createElement("button");
+					button.innerText = String.fromCharCode(i);
+					button.addEventListener("click", function() {
+					startingLetterNames=[];
+					for(var person=0;person<existingData.length;person++)
+					{
+						if(existingData[person].firstName.charAt(0)==button.innerText)
+						{
+							startingLetterNames.push(existingData[person]);
+						}
+
+					}
+					getCards(startingLetterNames);
+					
+					})
+					buttonsContainer.appendChild(button);
+					}
+			
+				</script>
+				</div>
+				<br>
+				<div class="search-container">
+					<form >
+					  <label  class="search-label" for="search"><b>Search</b></label>
+					  <input  class="search" type="text" placeholder="Enter any Keyword" name="search" id="search" onkeyup="getSearchValue()">
+					  <input class="clear" type="reset" value="Clear">
+					</form>
+				</div>
+				<div class="for-filter">
+				<form class="filter-form">
+					<label for="filter-by"><b>Filter by</b></label>
+					<select name="filter" id="filter">
+					  <option value="department">Department</option>
+					  <option value="office">Office</option>
+					  <option value="jobTitle">Job Title</option>
+					</select>
+					</form>
+					
+				  </div>
+				  <button class="open-button" onclick="openForm()">Add Employee</button>
+				</div>
+				<script>
+					
+					function getFilterValue()
+					{
+						return document.getElementById("filter").value;	
+						
+					}
+					function getSearchValue()
+					{
+					
+					 var filterValue = getFilterValue();
+					 var searchValue = document.getElementById("search").value;
+					 filterNames=[];
+					 
+					for(var person=0;person<existingData.length;person++)
+					{
+						if(existingData[person][filterValue].includes(searchValue))
+						 {
+						 	filterNames.push(existingData[person]);
+						 }
+						
+
+					}
+					getCards(filterNames);
+					}
+				</script>
+				<p class="note"><b>Note:</b>Please use  the advanced filter options to refine your results</p>
+				<div class="row2">
+					<div id="cardsContainer">
+						<script>
+							
+							getCards(existingData);
+							function getCards(data)
+							{
+							document.getElementById("cardsContainer").innerHTML='';
+							const cardsContainer = document.getElementById("cardsContainer");
+							if(data.length==0)
+							cardsContainer.innerHTML="<h1>No Records Found</h1>";
+							for (let i = 0; i <data.length; i++) 
+							{
+							const card = document.createElement("div");
+							card.className="card";
+							var img = document.createElement('img'); 
+							img.className="image";
+                			img.src = data[i].pic; 
+							card.appendChild(img);
+							const details = document.createElement("div");
+							details.innerHTML="<h3>"+data[i].firstName+" " +data[i].lastName+"</h3>"+
+							"<p class=\"title\">"+data[i].jobTitle+"</p>"+ "<p class=\"title\">"+data[i].department+" Department"+"</p>"+ "<p class=\"title\">"	+"<p class=\"extras\">&#xf098;&nbsp &#xf0e0;&nbsp &#xf075;&nbsp &#xf005;&nbsp &#xf004;</p>";
+							details.className="details";
+							card.appendChild(details);
+							card.addEventListener("click", function() {openEdit(data[i]);});
+							cardsContainer.appendChild(card);
+							
+							}
+							}
+					
+						</script>
+						</div>
+				</div>	
+				</div>
+
+		</div>
+			<div class="add-employee">
+				
+			
+				<div class="form-popup" id="myForm">
+					<form class="form-container" id="employee-details">
+					<h1 class="add-emplyee-heading">Add Employee</h1>
+					<div class="left-details">
+					  
+				  
+					  <label class="label" for="fname">FirstName:</label>
+					  <div id="FirstNameError"></div>
+					  <input type="text" placeholder="Enter First Name" name="fname" id="FirstName" onchange="setPreferredName()"  required>
+					  
+					  <label class="label" for="lname">LastName:</label>
+					  <div id="LastNameError"></div>
+					  <input type="text" placeholder="Enter Last Name" name="lname" id="LastName" onchange="setPreferredName()" required>
+
+					  <label class="label" for="pname">Preferred Name:</label>
+					  <div id="PreferredNameError"></div>
+					  <input type="text" placeholder='Enter Preferred Name' name="pname" id="PreferredName"  required>
+
+					  <label class="label" for="email">Email:</label>
+					  <div id="EmailError"></div>
+					  <input class="email" type="email" placeholder="Enter Email" name="email"  id="Email" required>
+					 
+					  <label  class="label"for="jobTitle">Job Title:</label>
+					  <div id="JobTitleError"></div>
+					  <input type="text" placeholder="Enter job Title" id="JobTitle" name="JobTitle" required>
+					  <button  type="button" class="btn" onclick="newEmployee()">Add Employee</button>
+
+					  
+					</div>
+					<div class="right-details"	>
+					  <label  class="label"for="office">Office:</label>
+					  <div id="OfficeError"></div>
+					  <input type="text" placeholder="Enter Office" id="Office" name="office" required>
+
+					  <label class="label" for="dept">Department:</label>
+					  <div id="DepartmentError"></div>
+					  <input type="text" placeholder="Enter Department"  id="Department" name="dept" required>
+
+					  <label  class="label" for="phno">Phone Number:</label>
+					  <div id="PhoneNumberError"></div>
+					  <input type="text" placeholder="Enter Phone Number" id="PhoneNumber" name="phno" required>
+
+					  <label  class="label" for="skypeId">Skype Id:</label>
+					  <input type="text" placeholder="Enter Skype ID" name="skypeId" required>
+
+					  <label  class="label" for="photo">Upload Photo:</label>
+					  
+					  <input  class="upload-pic" type="file" accept="image/*" />
+
+
+
+					  <button  class="btn cancel" onclick="closeForm()">Cancel</button>
+					</div>
+				</form>
+
+					
+				  </div>
+				  <script>
+					  function setPreferredName()
+					  {
+						var Name=document.getElementById("FirstName").value; 
+						var LName=document.getElementById("LastName").value; 
+						document.getElementById("PreferredName").value=Name+' '+LName;
+					  }
+				  </script>
+				  <script>
+					 var error='';
+					 var flag=0;
+					 function validate(idName)
+					 {
+						
+						var Name=document.getElementById(idName).value;
+						var errorDivision=idName+"Error"; 
+						NameErr=document.getElementById(errorDivision);
+						if(Name==""){
+								NameErr.innerHTML="Required";
+								flag=1;
+						}
+						else if(idName=="FirstName" ||idName=="LastName"||idName=="Office"|| idName=="Department"||idName=="JobTitle")
+						 {
+							validName=/^[A-Za-z]+$/;
+							if(!validName.test(Name)){
+								NameErr.innerHTML=idName+" must be string without digits and special characters<br>";
+								flag=1;
+							}
+								
+						}
+						else if (idName=="Email")
+						{
+							validName=/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+							if(!validName.test(Name)){
+								NameErr.innerHTML="Email format not supported";
+								flag=1;
+							}
+								
+						}
+						else if(idName=="PhoneNumber")
+						{
+							validName=/^[0-9]+$/;
+							if(!validName.test(Name) || Name.length!=10){
+								NameErr.innerHTML=idName+"must be only digits of length 10<br>";
+								flag=1;
+							}
+						}
+						if (flag==0){
+							NameErr.innerHTML='';
+						}
+						
+						
+
+					}
+					
+					function newEmployee()
+					{
+						flag=0;
+						validate("FirstName");
+						validate("LastName");
+						validate("Email");
+						validate("JobTitle");
+						validate("Office");
+						validate("Department");
+						validate("PhoneNumber");
+
+						if(flag==0)
+						{
+						let form = document.querySelector('#employee-details');
+						let formData = new FormData(form);
+						serializedFormData=serialize(formData);
+						existingData.push(serializedFormData);
+						alert("UserAdded Successfully")
+						}
+						
+
+						
+						
+					}
+					
+
+					
+					function serialize (data) {
+					let obj = {};
+					for (let [key, value] of data) {
+						if (obj[key] !== undefined) {
+							if (!Array.isArray(obj[key])) {
+								obj[key] = [obj[key]];
+							}
+							obj[key].push(value);
+						} else {
+							obj[key] = value;
+						}
+					}
+					return obj;
+				}
+					function openForm() {
+					document.getElementById("container").style.filter="blur(12px)";
+					document.getElementById("myForm").style.display = "block";
+					}
+					
+					function closeForm() {
+					 document.getElementById("container").style.removeProperty('filter');
+					  document.getElementById("myForm").style.display = "none";
+					}
+					</script>
+			
+			</div>
+			<div class="form-popup" id="myForm1">
+				<form class="form-container" id="edit-employee-details">
+				<h1 class="add-emplyee-heading">Edit Employee Details</h1>
+				<div class="left-details">
+				  
+			  
+				  <label class="label" for="fname">FirstName:</label>
+				  <input type="text" placeholder="Enter First Name" name="fname" id="FirstName1"  required>
+				  
+				  <label class="label" for="lname">LastName:</label>
+				  <input type="text" placeholder="Enter Last Name" name="lname" id="LastName1"  required>
+
+				  <label class="label" for="pname">Preferred Name:</label>
+				  <input type="text" placeholder='Enter Preferred Name' name="pname" id="PreferredName1"  required>
+
+				  <label class="label" for="email">Email:</label>
+				  
+				  <input class="email" type="email" placeholder="Enter Email" name="email"  id="Email1" required>
+				 
+				  <label  class="label"for="jobTitle">Job Title:</label>
+				  
+				  <input type="text" placeholder="Enter job Title" id="JobTitle1" name="JobTitle" required>
+				  <button  type="button" class="btn" onclick="SaveChanges()">Save Changes</button>
+
+				  
+				</div>
+				<div class="right-details"	>
+				  <label  class="label"for="office">Office:</label>
+				  <input type="text" placeholder="Enter Office" id="Office1" name="office" required>
+
+				  <label class="label" for="dept">Department:</label>
+				  <input type="text" placeholder="Enter Department"  id="Department1" name="dept" required>
+
+				  <label  class="label" for="phno">Phone Number:</label>
+				  <input type="text" placeholder="Enter Phone Number" id="PhoneNumber1" name="phno" required>
+
+				  <label  class="label" for="skypeId">Skype Id:</label>
+				  <input type="text" placeholder="Enter Skype ID" name="skypeId"  id="SkypeId1" required>
+
+				  <label  class="label" for="photo">Upload Photo:</label>
+				  <input  type="text" id="ProfilePic" >
+				  <input  class="upload-pic1"  type="file" accept="image/*" />
+
+				  
+				 
+				  
+				 <button  class="btn cancel" onclick="closeForm1()">Cancel</button>
+				</div>
+			    </form>
+			</div>
+
+			<script>
+				function openEdit(data)
+				{
+					document.getElementById("container").style.filter="blur(12px)";
+					document.getElementById("myForm1").style.display = "block";
+					document.getElementById("FirstName1").value=data.firstName;
+					document.getElementById("LastName1").value=data.lastName;
+					document.getElementById("PreferredName1").value=data.preferredName;
+					document.getElementById("Email1").value=data.email;
+					document.getElementById("JobTitle1").value=data.jobTitle;
+					document.getElementById("Office1").value=data.office;
+					document.getElementById("Department1").value=data.department;
+					document.getElementById("PhoneNumber1").value=data.phoneNumber;
+					document.getElementById("SkypeId1").value=data.skypeId;
+					document.getElementById("ProfilePic").value=data.pic;
+					
+
+				}
+				function SaveChanges()
+				{
+						
+					alert("UserDetails changes saved successfully");
+					closeForm1();
+				}
+				function closeForm1() 
+				{
+					document.getElementById("container").style.removeProperty('filter');
+					document.getElementById("myForm1").style.display = "none";
+				}
+			</script>
+			
+		
+		  
+	
+		
+
+	
+    </body>
+</html>

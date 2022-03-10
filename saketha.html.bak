@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <title>Saketa</title>
+        <link rel="stylesheet" href="saketaStyles.css">
+    </head>
+    <body>
+        <div class="container">
+        <div class="header">
+            <div class="saketa"><img class="saketa-img" src="saketa.png"></div>
+            <div class="tag">
+			<h2 class="emp-dir-heading">Employee Directory</h2>
+            <h5 class="tagline">The Ultimate People Directory Experience</h5>
+			</div>
+		</div>
+		<div class="line"></div>
+		<div class="left-div">
+			#left content in here
+		</div>
+
+		<div class="right-div">
+			<div class="row">
+			</div>
+			<div class="row">
+			</div>
+		
+		  
+		</div>
+		
+	</div>
+    </body>
+</html>

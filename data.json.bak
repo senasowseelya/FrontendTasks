@@ -1,0 +1,65 @@
+
+
+[
+{
+"firstName":"Sena Sowseelya",
+"lastName":"Vishnumolakala",
+"preferredName" :"Sena",
+"Email":"senasowseelya123@gmail.com",
+"jobTitle":"intern",
+"Office":"Technovert",
+"Department":"PE",
+"phoneNumber":"8464832529",
+"skypeId":"sena123"
+}
+
+,
+{
+"firstName":"Mohith",
+"lastName":"Vishnumolakala",
+"preferredName" :"Boby",
+"Email":"Mohith@gmail.com",
+"jobTitle":"hr",
+"Office":"Keka",
+"Department":"IT",
+"phoneNumber":"98738738888",
+"skypeId":"Mohith@123"
+},
+{
+"firstName":"Nagababu",
+"lastName":"Thota",
+"preferredName" :"Nag",
+"Email":"nag@gmail.com",
+"jobTitle":"junior developer",
+"Office":"Technovert",
+"Department":"PE",
+"phoneNumber":"987834807",
+"skypeId":"Nag@123"
+
+},
+{
+"firstName":"Haritha",
+"lastName":"lanka",
+"preferredName" :"Haritha",
+"Email":"hari@123@gmail.com",
+"jobTitle":"Intern",
+"Office":"Keka",
+"Department":"IT",
+"phoneNumber":"8975834957",
+"skypeId":"Hari@123"
+
+},
+{
+"firstName":"Priya",
+"lastName":"Kavuri",
+"preferredName" :"Priya",
+"Email":"priya@123",
+"jobTitle":"Intern",
+"Office":"Technovert",
+"Department":"PE",
+"phoneNumber":"734987090",
+"skypeId":"Priya@123"
+
+}
+]
+
