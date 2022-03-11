@@ -200,7 +200,7 @@
 		<div class="right-div">
 			
 			<div class="row1">
-				<img class="contact-pic" src="contact.png" onclick="getCards(existingData)">
+				<img class="contact-pic" src="contactPic.jpg" onclick="getCards(existingData)">
 				<div id="buttonsContainer">
 				<script>
 					
@@ -315,7 +315,7 @@
 			
 				<div class="form-popup" id="myForm">
 					<form class="form-container" id="employee-details">
-					<h1 class="add-emplyee-heading">Add Employee</h1>
+					<h2 class="add-emplyee-heading">Add Employee</h2>
 					<div class="left-details">
 					  
 				  
@@ -323,30 +323,40 @@
 					  <div id="FirstNameError"></div>
 					  <input type="text" placeholder="Enter First Name" name="fname" id="FirstName" onchange="setPreferredName()"  required>
 					  
-					  <label class="label" for="lname">LastName:</label>
-					  <div id="LastNameError"></div>
-					  <input type="text" placeholder="Enter Last Name" name="lname" id="LastName" onchange="setPreferredName()" required>
+					 
 
 					  <label class="label" for="pname">Preferred Name:</label>
 					  <div id="PreferredNameError"></div>
 					  <input type="text" placeholder='Enter Preferred Name' name="pname" id="PreferredName"  required>
 
-					  <label class="label" for="email">Email:</label>
-					  <div id="EmailError"></div>
-					  <input class="email" type="email" placeholder="Enter Email" name="email"  id="Email" required>
 					 
+					 
+					  <label  class="label"for="office">Office:</label>
+					  <div id="OfficeError"></div>
+					  <input type="text" placeholder="Enter Office" id="Office" name="office" required>
+
+
+					
 					  <label  class="label"for="jobTitle">Job Title:</label>
 					  <div id="JobTitleError"></div>
 					  <input type="text" placeholder="Enter job Title" id="JobTitle" name="JobTitle" required>
+					  <label  class="label" for="skypeId">Skype Id:</label>
+					  <input type="text" placeholder="Enter Skype ID" name="skypeId" required>
+					  <br>
+					  
 					  <button  type="button" class="btn" onclick="newEmployee()">Add Employee</button>
 
 					  
 					</div>
 					<div class="right-details"	>
-					  <label  class="label"for="office">Office:</label>
-					  <div id="OfficeError"></div>
-					  <input type="text" placeholder="Enter Office" id="Office" name="office" required>
+						<label class="label" for="lname">LastName:</label>
+						<div id="LastNameError"></div>
+						<input type="text" placeholder="Enter Last Name" name="lname" id="LastName" onchange="setPreferredName()" required>
 
+						<label class="label" for="email">Email:</label>
+						<div id="EmailError"></div>
+						<input class="email" type="text" placeholder="Enter Email" name="email"  id="Email" required>
+					
 					  <label class="label" for="dept">Department:</label>
 					  <div id="DepartmentError"></div>
 					  <input type="text" placeholder="Enter Department"  id="Department" name="dept" required>
@@ -355,15 +365,13 @@
 					  <div id="PhoneNumberError"></div>
 					  <input type="text" placeholder="Enter Phone Number" id="PhoneNumber" name="phno" required>
 
-					  <label  class="label" for="skypeId">Skype Id:</label>
-					  <input type="text" placeholder="Enter Skype ID" name="skypeId" required>
-
-					  <label  class="label" for="photo">Upload Photo:</label>
 					  
+					  <label  class="label" for="photo">Upload Photo:</label>
+					  <input type="text">
 					  <input  class="upload-pic" type="file" accept="image/*" />
-
-
-
+					  <br>
+					  <br>
+					  
 					  <button  class="btn cancel" onclick="closeForm()">Cancel</button>
 					</div>
 				</form>
@@ -387,6 +395,7 @@
 						var Name=document.getElementById(idName).value;
 						var errorDivision=idName+"Error"; 
 						NameErr=document.getElementById(errorDivision);
+						NameErr.innerHTML="<br>";
 						if(Name==""){
 								NameErr.innerHTML="Required";
 								flag=1;
@@ -395,7 +404,7 @@
 						 {
 							validName=/^[A-Za-z]+$/;
 							if(!validName.test(Name)){
-								NameErr.innerHTML=idName+" must be string without digits and special characters<br>";
+								NameErr.innerHTML=idName+"can only be letters<br>";
 								flag=1;
 							}
 								
@@ -418,7 +427,7 @@
 							}
 						}
 						if (flag==0){
-							NameErr.innerHTML='';
+							NameErr.innerHTML='<br>';
 						}
 						
 						
@@ -427,9 +436,11 @@
 					
 					function newEmployee()
 					{
+
 						flag=0;
 						validate("FirstName");
 						validate("LastName");
+						validate("PreferredName");
 						validate("Email");
 						validate("JobTitle");
 						validate("Office");
@@ -480,51 +491,44 @@
 			</div>
 			<div class="form-popup" id="myForm1">
 				<form class="form-container" id="edit-employee-details">
-				<h1 class="add-emplyee-heading">Edit Employee Details</h1>
+				<h2 class="add-emplyee-heading">Edit Employee Details</h2>
+				<br>
 				<div class="left-details">
 				  
 			  
-				  <label class="label" for="fname">FirstName:</label>
+				  <label class="label" for="fname">First Name:</label>
 				  <input type="text" placeholder="Enter First Name" name="fname" id="FirstName1"  required>
 				  
-				  <label class="label" for="lname">LastName:</label>
-				  <input type="text" placeholder="Enter Last Name" name="lname" id="LastName1"  required>
-
 				  <label class="label" for="pname">Preferred Name:</label>
 				  <input type="text" placeholder='Enter Preferred Name' name="pname" id="PreferredName1"  required>
 
-				  <label class="label" for="email">Email:</label>
-				  
-				  <input class="email" type="email" placeholder="Enter Email" name="email"  id="Email1" required>
-				 
-				  <label  class="label"for="jobTitle">Job Title:</label>
-				  
-				  <input type="text" placeholder="Enter job Title" id="JobTitle1" name="JobTitle" required>
-				  <button  type="button" class="btn" onclick="SaveChanges()">Save Changes</button>
-
-				  
-				</div>
-				<div class="right-details"	>
 				  <label  class="label"for="office">Office:</label>
 				  <input type="text" placeholder="Enter Office" id="Office1" name="office" required>
 
 				  <label class="label" for="dept">Department:</label>
 				  <input type="text" placeholder="Enter Department"  id="Department1" name="dept" required>
 
-				  <label  class="label" for="phno">Phone Number:</label>
-				  <input type="text" placeholder="Enter Phone Number" id="PhoneNumber1" name="phno" required>
-
 				  <label  class="label" for="skypeId">Skype Id:</label>
 				  <input type="text" placeholder="Enter Skype ID" name="skypeId"  id="SkypeId1" required>
+				  <br>
+				  <br>
+				  <button  type="button" class="btn" onclick="SaveChanges()">Save Changes</button>
 
+				  
+				</div>
+				<div class="right-details"	>
+					<label class="label" for="lname">Last Name:</label>
+					<input type="text" placeholder="Enter Last Name" name="lname" id="LastName1"  required>
+					<label class="label" for="email">Email:</label>
+				   <input class="email" type="text" placeholder="Enter Email" name="email"  id="Email1" required>
+				   <label  class="label"for="jobTitle">Job Title:</label>
+				  <input type="text" placeholder="Enter job Title" id="JobTitle1" name="JobTitle" required>
+				  <label  class="label" for="phno">Phone Number:</label>
+				  <input type="text" placeholder="Enter Phone Number" id="PhoneNumber1" name="phno" required>
 				  <label  class="label" for="photo">Upload Photo:</label>
 				  <input  type="text" id="ProfilePic" >
 				  <input  class="upload-pic1"  type="file" accept="image/*" />
-
-				  
-				 
-				  
-				 <button  class="btn cancel" onclick="closeForm1()">Cancel</button>
+				  <button  class="btn-cancel" onclick="closeForm1()">Cancel</button>
 				</div>
 			    </form>
 			</div>
@@ -550,7 +554,7 @@
 				function SaveChanges()
 				{
 						
-					alert("UserDetails changes saved successfully");
+					alert("UserDetails changed saved successfully");
 					closeForm1();
 				}
 				function closeForm1() 

@@ -23,7 +23,7 @@
   margin-left: 90%;
 }
 .welcome{
-  margin-left :60%; 
+  margin-left :58%; 
   margin-top:-20px;
   display:inline-block;
   width: 300px;
@@ -91,20 +91,12 @@
   color:grey;
   border:2px solid black; 
 }
-.email
-{
-  
-    width: 345px;
-    height: 35px;
-    padding: 10px;
-
-}
 
 
 .emp-dir-heading
 {
     
-    color:skyblue;
+    color:#00B1FC;
     margin:8% 0% 0% 15%;
     width:100%;
     
@@ -158,6 +150,7 @@ ul
 }
 .view-more
 {
+  display:none;
   color:#00B1FC;
   font-size: 14px;;
   text-decoration: none;
@@ -193,6 +186,7 @@ ul
 
 .contact-pic
 {
+    color:#69BA00;
     width:29px;
     height:27px;
     
@@ -221,6 +215,7 @@ ul
     background-color: #00B1FC;
     border:1px solid white;
     margin:-45px 0px 0px 665px;
+    margin-left: 87%;
   }
   
   /* The popup form - hidden by default */
@@ -231,22 +226,23 @@ ul
  
   .label{
     
-    font-size: 25px;
+    font-size: 13px;
+    font-weight: bold;
     
   }
   /* Add styles to the form container */
   .form-container {
     
-    width:50%;
+    width:30%;
     position:absolute;
     margin-top: -550px;
-    margin-left: 25%;
+    margin-left: 35%;
     z-index: 1;
     padding:0px 0px 0px 40px;
     font-family: Arial, Helvetica, sans-serif;
     letter-spacing: 1;
     background-color:white;
-    border:5px solid skyblue;
+    border:5px solid #00B1FC;
     
   }
   .add-emplyee-heading
@@ -272,13 +268,14 @@ ul
   
   /* Full-width input fields */
   .form-container input[type=text], .form-container input[type=password] {
-    width: 90%;
+    width: 80%;
     display:block;
-    font-size: 13px;
-    height:35px;
-    padding: 10px;
+    font-size: 12px;
+    height:25px;
+    padding: 5px;
     border: 1px solid black;
     background:white;
+    margin:4px;
   }
   
   /* When the inputs get focus, do something */
@@ -289,31 +286,37 @@ ul
   
   /* Set a style for the submit/login button */
   .form-container .btn {
-    background-color:skyblue;;
+    background-color:#00B1FC;;
     
     cursor: pointer;
-    width:70%;
+    width:50%;
     border-radius: 8px;;
-    height:35px;
-    margin:15px 25px 15px 25px;
+    height:30px;
+    margin:0px 25px 15px 35px;
+    opacity: 0.8;
+  }
+  .form-container .btn-cancel {
+    background-color:#00B1FC;;
+    cursor: pointer;
+    width:50%;
+    border-radius: 8px;;
+    height:30px;
+    margin:5px 25px 15px 35px;
     opacity: 0.8;
   }
   
   /* Add a red background color to the cancel button */
-  .form-container .cancel {
-    background-color:skyblue;
+  .form-container .btn-cancel {
+    background-color:#00B1FC;
     
   }
 
   
   /* Add some hover effects to buttons */
-  .form-container .btn:hover {
-    background-color: greenyellow;
+  .form-container .btn:hover ,.btn-cancel:hover{
+    background-color:#69BA00;
   }
-  .form-container .cancel:hover{
-    background-color:red
-    
-  }
+  
   #mydata
   {
     width:150px;
@@ -375,10 +378,10 @@ ul
   margin-top:5px;
    width: 85%;
  }
-#FirstNameError, #LastNameError,#JobTitleError,#OfficeError,#DepartmentError,#PhoneNumberError,#EmailError
+#FirstNameError, #LastNameError,#JobTitleError,#OfficeError,#DepartmentError,#PhoneNumberError,#EmailError,#PreferredNameError
 {
   color:red;
-  font-size: 10px;
+  font-size:9px;
 }
 h1{
   text-align:center;
@@ -388,9 +391,9 @@ h1{
 }
 .upload-pic
 {
-  margin:9px 0px 5px 0px;
+  margin: -27.5px 0px 0px 5px;
 }
 .upload-pic1{
 
-margin: -28px 0px 0px 148px;
+margin:5px;
 }
