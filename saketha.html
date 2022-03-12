@@ -65,7 +65,7 @@
 		</div>
 			<div class="add-employee">
 				<div class="form-popup" id="myForm">
-					<form class="form-container" id="employee-details">
+					<form class="form-container" id="employee-details" method="POST">
 					<h2 class="add-emplyee-heading">Add Employee</h2>
 					<div class="left-details">
 						<label class="label" for="fname">FirstName:</label>
@@ -109,7 +109,7 @@
 				</div>
 			</div>
 			<div class="form-popup" id="editEmployeeForm">
-				<form class="form-container" id="edit-employee-details">
+				<form class="form-container" id="edit-employee-details" method="POST">
 				<h2 class="add-emplyee-heading">Edit Employee Details</h2>
 				<br>
 				<div class="left-details">
@@ -149,7 +149,7 @@
 					<div id="NewProfilePicError"></div>
 					<input  type="text" id="ProfilePic" >
 					<input  class="upload-pic1"  type="file" accept="image/*" />
-					<button  class="btn-cancel" onclick="closeeditEmployeeForm()">Cancel</button>
+					<button  class="btn-cancel" onclick="closeEditEmployeeForm()">Cancel</button>
 				</div>
 			    </form>
 			</div>
@@ -537,15 +537,17 @@
 						clickedCard["phoneNumber"]=document.getElementById("NewPhoneNumber").value;
 						clickedCard["skypeId"]=document.getElementById("NewSkypeId").value;
 						displayCards(employeeData);
-						if(!flag)
-							closeeditEmployeeForm();
+						if(!flag){
+							alert("Employee details changed successfully");
+							closeEditEmployeeForm();
+							}
 
 
 						
 						
 						
 					}										
-					function closeeditEmployeeForm() 
+					function closeEditEmployeeForm() 
 					{
 					document.getElementById("container").style.removeProperty('filter');
 					document.getElementById("editEmployeeForm").style.display = "none";
