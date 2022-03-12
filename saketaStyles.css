@@ -19,7 +19,7 @@
 }
 .profile
 {
-  margin-top: -20%;
+  margin-top: -23%;
   margin-left: 90%;
 }
 .welcome{
@@ -176,6 +176,7 @@ ul
     padding: 5px;
     width: 3.8%  ;
     margin-top: -28px;
+    cursor:pointer;
     
 
 }
@@ -324,6 +325,10 @@ ul
     color:rgba(0,0,0,0.7);
     margin:0;
     font-size:13px;
+    
+  }
+  #mydata div{
+    cursor:pointer;
   }
   #mydata h3
   {
@@ -383,6 +388,11 @@ ul
   color:red;
   font-size:9px;
 }
+#NewFirstNameError, #NewLastNameError,#NewJobTitleError,#NewOfficeError,#NewDepartmentError,#NewPhoneNumberError,#NewEmailError,#NewPreferredNameError
+{
+  color:red;
+  font-size:9px;
+}
 h1{
   text-align:center;
   color:#00B1FC;
@@ -396,4 +406,13 @@ h1{
 .upload-pic1{
 
 margin:5px;
+}
+.filters
+{
+  margin:0;
+  font-size:12px;
+}
+.left-panel
+{
+  width:225px;
 }
