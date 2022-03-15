@@ -291,12 +291,12 @@
 								{
     								div.innerHTML+=`<p class='filters' onclick='getFilterData("${key}","department")'> ${key} (${dept[key]})</p>`;
 								}	
-								div.innerHTML+="<br> <h3> Office </h3> <br>";
+								div.innerHTML+="<br><br><br><h3> Office </h3><br>";
 								for (const key of Object.keys(offices)) 
 								{
 									div.innerHTML+=`<p class='filters' onclick='getFilterData("${key}","office")'> ${key} (${offices[key]})</p>`;
 								}
-								div.innerHTML+="<br> <h3> Job Titles </h3> <br>";
+								div.innerHTML+="<br><br><br> <h3> Job Titles </h3><br>";
 								for (const key of Object.keys(jobs))
 								 {
 									div.innerHTML+=`<p class='filters' onclick='getFilterData("${key}","jobTitle")'> ${key} (${jobs[key]})</p>`;
@@ -333,17 +333,7 @@
 						button.style.backgroundColor="#69BA00";
 						button.className="Active";
 						getSearchValue();
-						// var searchKey=document.getElementById("search").value;
-						// var filterKey=getFilterValue();
-
-						// for(var person=0;person<employeeData.length;person++)
-						// {
-						// 	if(employeeData[person].firstName.charAt(0)==button.innerText  )
-						// 	{
-						// 		startingLetterNames.push(employeeData[person]);
-						// 	}
-
-						// }
+						
 						
 					})
 						buttonsContainer.appendChild(button);
@@ -359,6 +349,7 @@
 								}
 								
 						}
+						
 						displayCards(filteredData);
 						
 					}
@@ -381,6 +372,7 @@
 					}
 					function getSearchValue()
 					{
+						
 						var filterValue = getFilterValue();
 						var searchValue = document.getElementById("search").value;
 						var clickedButton=document.querySelector('.Active');
@@ -389,6 +381,7 @@
 
 						else
 						    clickedButton='';
+						
 						filterNames=[];
 						for(var person=0;person<employeeData.length;person++)
 						{
@@ -531,10 +524,17 @@
 						var object={};
 						object["firstName"]=document.getElementById("FirstName").value;
 						object["lastName"]=document.getElementById("LastName").value;
+						object["preferredName"]=document.getElementById("PreferredName").value;
+						object["phoneNumber"]=document.getElementById("PhoneNumber").value;
 						object["email"]=document.getElementById("Email").value;
 						object["jobTitle"]=document.getElementById("JobTitle").value;
 						object["office"]=document.getElementById("Office").value;
 						object["department"]=document.getElementById("Department").value;
+						if(document.getElementById("SkypeId")!=null)
+							object["skypeId"]=document.getElementById("SkypeId").value;
+						else
+							object["skypeId"]='';
+
 						var filePath = document.getElementById("pic").value;
 						const fileparts=filePath.split("\\");
 						var fileName=fileparts[fileparts.length-1];
