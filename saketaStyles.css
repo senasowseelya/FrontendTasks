@@ -66,7 +66,12 @@
   height:30px;
   border: 1px solid white;
   background-color:#69BA00;
+  cursor: pointer;
   
+}
+.upload-image
+{
+  margin-top:5px;
 }
 
 .search-container
@@ -174,16 +179,30 @@ ul
     color:white;
     border:1px solid white;
     padding: 5px;
-    width: 3.8%  ;
-    margin-top: -28px;
+    width: 3.7%  ;
+    height:30px;
+    
     cursor:pointer;
     
 
+    
 }
-#buttonsContainer
+
+#buttonsContainer #personButton
 {
-    margin-left: 30px;
+    font-family: 'Font Awesome 5 Free';
+    background-color:#69BA00;
+    color:white;
+    border:1px solid white;
+    font-size:12px;
+    width: 3.7%  ;
+    height:30px;
+    
+    cursor:pointer;
+    
+   
 }
+
 
 .contact-pic
 {
@@ -306,11 +325,7 @@ ul
     opacity: 0.8;
   }
   
-  /* Add a red background color to the cancel button */
-  .form-container .btn-cancel {
-    background-color:#00B1FC;
-    
-  }
+ 
 
   
   /* Add some hover effects to buttons */
@@ -344,6 +359,7 @@ ul
     background-color: #E9E8E8;
     display: inline-block;
     padding: 5px;
+    cursor: pointer;
   }
 
   #cardsContainer
@@ -401,10 +417,10 @@ h1{
 }
 .upload-pic
 {
-  margin: -27.5px 0px 0px 5px;
+  margin: 8px 0px 0px 5px;
 }
 .upload-pic1{
-
+display:none;
 margin:5px;
 }
 .filters

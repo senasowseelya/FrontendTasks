@@ -17,7 +17,7 @@
 			</div>
 			<div class="welcome">
 				<div class="child1"><h2>Welcome,</h2></div>
-				<div class="child2"><h3>Anthony Morris</h3></div>
+				<div class="child2" id="userName"><h3></h3></div>
 				<img src="Antony.png" class="profile">
 			</div>
 		</div>
@@ -33,25 +33,21 @@
 		</div>
 		<div class="right-div">
 			<div class="row1">
-				<img class="contact-pic" src="contactPic.jpg" onclick="displayCards(employeeData)">
+				
 				<div id="buttonsContainer"></div>
 				<br>
 				<div class="search-container">
 					<form >
 					  <label  class="search-label" for="search"><b>Search</b></label>
 					  <input  class="search" type="text" placeholder="Enter any Keyword" name="search" id="search" onkeyup="getSearchValue()">
-					  <input class="clear" type="reset" value="Clear">
-					</form>
+					  <input class="clear" type="reset" value="Clear" onclick="clearAll()">
+					
 				</div>
 				<div class="for-filter">
-				<form class="filter-form">
-					<label for="filter-by"><b>Filter by</b></label>
-					<select name="filter" id="filter">
+					  <label for="filter-by"><b>Filter by</b></label>
+					  <select onchange="getSearchValue()" name="filter" id="filter">
 					  <option value="firstName">FirstName</option>
 					  <option value="lastName">LastName</option>
-					  <option value="department">Department</option>
-					  <option value="office">Office</option>
-					  <option value="jobTitle">Job Title</option>
 					</select>
 					</form>
 				</div>
@@ -98,12 +94,11 @@
 						<label  class="label" for="phno">Phone Number:</label>
 						<div id="PhoneNumberError"></div>
 						<input type="text" placeholder="Enter Phone Number" id="PhoneNumber" name="phno" required>
-						<label  class="label" for="photo">Upload Photo:</label>
-						<input type="text">
+						<label  class="label"  for="photo">Upload Photo:</label>
 						<input  class="upload-pic" id="pic" type="file" accept="image/*" />
 						<br>
 						<br>
-					  	<button  class="btn cancel" onclick="closeForm()">Cancel</button>
+					  	<button type="button"  class="btn-cancel" onclick="closeForm()">Cancel</button>
 					</div>
 					</form>
 				</div>
@@ -118,16 +113,16 @@
 					<input type="text" placeholder="Enter First Name" name="fname" id="NewFirstName"  required>
 					<label class="label" for="pname">Preferred Name:</label>
 					<div id="NewPreferredNameError"></div>
-					<input type="text" placeholder='Enter Preferred Name' name="pname" id="NewPreferredName"  required>
+					<input type="text" placeholder='Enter Preferred Name' name="pname" id="NewPreferredName"  disabled>
 					<label  class="label"for="office">Office:</label>
 					<div id="NewOfficeError"></div>
-					<input type="text" placeholder="Enter Office" id="NewOffice" name="office" required>
+					<input type="text" placeholder="Enter Office" id="NewOffice" name="office" disabled>
 					<label class="label" for="dept">Department:</label>
 					<div id="NewDepartmentError"></div>
-					<input type="text" placeholder="Enter Department"  id="NewDepartment" name="dept" required>
+					<input type="text" placeholder="Enter Department"  id="NewDepartment" name="dept">
 					<label  class="label" for="skypeId">Skype Id:</label>
 					<div id="NewSkypeIdError"></div>
-					<input type="text" placeholder="Enter Skype ID" name="skypeId"  id="NewSkypeId" required>
+					<input type="text" placeholder="Enter Skype ID" name="skypeId"  id="NewSkypeId" disabled>
 					<br>
 					<br>
 					<button  type="button" class="btn" onclick="SaveChanges()">Save Changes</button>
@@ -138,23 +133,28 @@
 					<input type="text" placeholder="Enter Last Name" name="lname" id="NewLastName"  required>
 					<label class="label" for="email">Email:</label>
 					<div id="NewEmailError"></div>
-					<input class="email" type="text" placeholder="Enter Email" name="email"  id="NewEmail" required>
+					<input class="email" type="text" placeholder="Enter Email" name="email"  id="NewEmail" disabled>
 					<label  class="label"for="jobTitle">Job Title:</label>
 					<div id="NewJobTitleError"></div>
 					<input type="text" placeholder="Enter job Title" id="NewJobTitle" name="JobTitle" required>
 					<label  class="label" for="phno">Phone Number:</label>
 					<div id="NewPhoneNumberError"></div>
-					<input type="text" placeholder="Enter Phone Number" id="NewPhoneNumber" name="phno" required>
+					<input type="text" placeholder="Enter Phone Number" id="NewPhoneNumber" name="phno" disabled>
 					<label  class="label" for="photo">Upload Photo:</label>
 					<div id="NewProfilePicError"></div>
-					<input  type="text" id="ProfilePic" >
-					<input  class="upload-pic1"  type="file" accept="image/*" />
-					<button  class="btn-cancel" onclick="closeEditEmployeeForm()">Cancel</button>
+					<input  class="upload-pic1" id="NewProfilePic" type="file" onchange="changeSelectedFile()">
+					<button type="button" class="upload-image"><label for="NewProfilePic">Upload Image</label></button>
+					<label id="selectedFile"></label>
+					<br>
+					<br>
+					<br>
+					<button  type="button" class="btn-cancel" onclick="closeEditEmployeeForm()">Cancel</button>
 				</div>
 			    </form>
 			</div>
 			<script>
 					var clickedCard;
+					var clickedButton='';
 					var employeeData=
 						[
 						{
@@ -227,7 +227,7 @@
 							"lastName":"Bailey",
 							"preferredName" :"Angela",
 							"email":"Angela@123",
-							"jobTitle":"Talent Manager Jr.",
+							"jobTitle":"Talent Manager Jr",
 							"office":"Seattle",
 							"department":"HR",
 							"phoneNumber":"734987090",
@@ -262,6 +262,7 @@
 					appendData(employeeData);
 					function appendData(data) 
 						{
+							document.getElementById("myData").innerHTML='';
 							var mainContainer = document.getElementById("myData");
 							var dept={};
 							var offices={};
@@ -302,27 +303,50 @@
 								}
 								mainContainer.appendChild(div);
 						}
-					const buttonsContainer = document.getElementById("buttonsContainer");
-					for (let i = 65; i < 91; i++) {
-					const button = document.createElement("button");
-					button.id=i;
-					button.innerText = String.fromCharCode(i);
-					button.addEventListener("click", function() {
-					startingLetterNames=[];
-					for(let j=65;j<91;j++)
-						document.getElementById(j).style.backgroundColor="#00B1FC";
-					button.style.backgroundColor="#69BA00";
-					for(var person=0;person<employeeData.length;person++)
-					{
-						if(employeeData[person].firstName.charAt(0)==button.innerText)
-						{
-							startingLetterNames.push(employeeData[person]);
-						}
 
-					}
-					displayCards(startingLetterNames);
+					
+					const buttonsContainer = document.getElementById("buttonsContainer");
+
+					let button = document.createElement("button");
+					button.innerHTML ="&#xF007";
+					button.setAttribute("id","personButton");
+					button.addEventListener("click", function() {
+						document.getElementById("personButton").style.backgroundColor="#69BA00";
+						displayCards(employeeData);
+						for(let j=65;j<91;j++)
+						document.getElementById(j).style.backgroundColor="#00B1FC";
+					});
+					document.getElementById("buttonsContainer").appendChild(button);
+					for (let i = 65; i < 91; i++) 
+					{
+						const button = document.createElement("button");
+						button.id=i;
+						button.innerText = String.fromCharCode(i);
+						button.addEventListener("click", function() {
+						startingLetterNames=[];
+						for(let j=65;j<91;j++)
+						{
+							document.getElementById(j).style.backgroundColor="#00B1FC";
+							document.getElementById(j).className="inActive";
+						}
+						document.getElementById("personButton").style.backgroundColor="#00B1FC";
+						button.style.backgroundColor="#69BA00";
+						button.className="Active";
+						getSearchValue();
+						// var searchKey=document.getElementById("search").value;
+						// var filterKey=getFilterValue();
+
+						// for(var person=0;person<employeeData.length;person++)
+						// {
+						// 	if(employeeData[person].firstName.charAt(0)==button.innerText  )
+						// 	{
+						// 		startingLetterNames.push(employeeData[person]);
+						// 	}
+
+						// }
+						
 					})
-					buttonsContainer.appendChild(button);
+						buttonsContainer.appendChild(button);
 					}
 					function getFilterData(key,filterType)
 					{
@@ -338,6 +362,17 @@
 						displayCards(filteredData);
 						
 					}
+					function displayUserName()
+					{
+						document.getElementById("userName").innerHTML=employeeData[0].firstName+" "+employeeData[0].lastName;
+					}
+					function clearAll()
+					{
+						document.getElementById("personButton").style.backgroundColor="#69BA00";
+						displayCards(employeeData);
+						for(let j=65;j<91;j++)
+						document.getElementById(j).style.backgroundColor="#00B1FC";
+					}
 					
 					function getFilterValue()
 					{
@@ -348,21 +383,53 @@
 					{
 						var filterValue = getFilterValue();
 						var searchValue = document.getElementById("search").value;
+						var clickedButton=document.querySelector('.Active');
+						if(clickedButton!=null)
+							clickedButton=clickedButton.innerHTML;
+
+						else
+						    clickedButton='';
 						filterNames=[];
 						for(var person=0;person<employeeData.length;person++)
 						{
 							var v1=employeeData[person][filterValue].toLowerCase();
 							var v2=searchValue.toLowerCase();
-							if(v1.includes(v2))
+							if(clickedButton=='')
+							{
+								if(v1.includes(v2))
 								{
 									filterNames.push(employeeData[person]);
 								}
+							}
+							else
+							{
+								if(v2!='')
+								{
+									if(((employeeData[person].firstName.charAt(0).toLowerCase())==clickedButton.toLowerCase()) && v1.includes(v2))
+									{
+										filterNames.push(employeeData[person]);
+									}
+								
+								}
+								else
+								{
+									if((employeeData[person].firstName.charAt(0).toLowerCase())==clickedButton.toLowerCase())
+									{
+										filterNames.push(employeeData[person]);
+									}
+
+								}
+
+							}	
+							
 						}
+						
 						displayCards(filterNames);
 					}
 					displayCards(employeeData);
 					function displayCards(data)
 					{
+						displayUserName();
 						document.getElementById("cardsContainer").innerHTML='';
 						const cardsContainer = document.getElementById("cardsContainer");
 						if(data.length==0)
@@ -393,7 +460,15 @@
 					}
 					var error='';
 					var flag=0;
+					function changeSelectedFile()
+					{
+						var filePath = document.getElementById("NewProfilePic").value;
+						const fileparts=filePath.split("\\");
+						var fileName=fileparts[fileparts.length-1];
+						document.getElementById("selectedFile").innerHTML=fileName;
+					}
 					function validate(idName)
+					
 					{
 											
 						var Name=document.getElementById(idName).value;
@@ -440,6 +515,7 @@
 					}
 					function addNewEmployee()
 					{
+					
 
 						flag=0;
 						validate("FirstName");
@@ -464,9 +540,8 @@
 						var fileName=fileparts[fileparts.length-1];
 						object["pic"]=fileName;
 						employeeData.push(object);
-						alert("Employee Added successfully");
 						displayCards(employeeData);
-						
+						appendData(employeeData);
 						closeForm();
 						}
 					}
@@ -512,7 +587,9 @@
 						document.getElementById("NewDepartment").value=data.department;
 						document.getElementById("NewPhoneNumber").value=data.phoneNumber;
 						document.getElementById("NewSkypeId").value=data.skypeId;
-						document.getElementById("ProfilePic").value=data.pic;
+						document.getElementById("selectedFile").innerHTML=data.pic;
+						
+						
 						
 
 					}
@@ -536,11 +613,14 @@
 						clickedCard["department"]=document.getElementById("NewDepartment").value;
 						clickedCard["phoneNumber"]=document.getElementById("NewPhoneNumber").value;
 						clickedCard["skypeId"]=document.getElementById("NewSkypeId").value;
+						clickedCard["pic"]=document.getElementById("selectedFile").innerHTML;
 						displayCards(employeeData);
-						if(!flag){
-							alert("Employee details changed successfully");
+						if(!flag)
+						{
+							
 							closeEditEmployeeForm();
-							}
+						}
+						
 
 
 						
