@@ -338,9 +338,11 @@
 					})
 						buttonsContainer.appendChild(button);
 					}
+					let filteredData=[];
 					function getFilterData(key,filterType)
 					{
 						filteredData=[];
+						clearAll();
 						for(var person=0;person<employeeData.length;person++)
 						{
 							if(employeeData[person][filterType]==key)
@@ -353,26 +355,11 @@
 						displayCards(filteredData);
 						
 					}
-					function displayUserName()
-					{
-						document.getElementById("userName").innerHTML=employeeData[0].firstName+" "+employeeData[0].lastName;
-					}
-					function clearAll()
-					{
-						document.getElementById("personButton").style.backgroundColor="#69BA00";
-						displayCards(employeeData);
-						for(let j=65;j<91;j++)
-						document.getElementById(j).style.backgroundColor="#00B1FC";
-					}
 					
-					function getFilterValue()
-					{
-						return document.getElementById("filter").value;	
-						
-					}
+					
 					function getSearchValue()
 					{
-						
+						var requiredData=employeeData;
 						var filterValue = getFilterValue();
 						var searchValue = document.getElementById("search").value;
 						var clickedButton=document.querySelector('.Active');
@@ -381,34 +368,35 @@
 
 						else
 						    clickedButton='';
-						
+						if(filteredData.length!=0)
+							requiredData=filteredData;
 						filterNames=[];
-						for(var person=0;person<employeeData.length;person++)
+						for(var person=0;person<requiredData.length;person++)
 						{
-							var v1=employeeData[person][filterValue].toLowerCase();
+							var v1=requiredData[person][filterValue].toLowerCase();
 							var v2=searchValue.toLowerCase();
 							if(clickedButton=='')
 							{
 								if(v1.includes(v2))
 								{
-									filterNames.push(employeeData[person]);
+									filterNames.push(requiredData[person]);
 								}
 							}
 							else
 							{
 								if(v2!='')
 								{
-									if(((employeeData[person].firstName.charAt(0).toLowerCase())==clickedButton.toLowerCase()) && v1.includes(v2))
+									if(((requiredData[person].firstName.charAt(0).toLowerCase())==clickedButton.toLowerCase()) && v1.includes(v2))
 									{
-										filterNames.push(employeeData[person]);
+										filterNames.push(requiredData[person]);
 									}
 								
 								}
 								else
 								{
-									if((employeeData[person].firstName.charAt(0).toLowerCase())==clickedButton.toLowerCase())
+									if((requiredData[person].firstName.charAt(0).toLowerCase())==clickedButton.toLowerCase())
 									{
-										filterNames.push(employeeData[person]);
+										filterNames.push(requiredData[person]);
 									}
 
 								}
@@ -420,6 +408,24 @@
 						displayCards(filterNames);
 					}
 					displayCards(employeeData);
+
+					function displayUserName()
+					{
+						document.getElementById("userName").innerHTML=employeeData[0].firstName+" "+employeeData[0].lastName;
+					}
+					function clearAll()
+					{
+						document.getElementById("personButton").style.backgroundColor="#69BA00";
+						displayCards(employeeData);
+						for(let j=65;j<91;j++)
+						document.getElementById(j).style.backgroundColor="#00B1FC";
+						document.querySelector('.search').value='';
+					}
+					function getFilterValue()
+					{
+						return document.getElementById("filter").value;	
+						
+					}
 					function displayCards(data)
 					{
 						displayUserName();
