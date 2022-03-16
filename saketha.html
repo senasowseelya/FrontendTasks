@@ -28,8 +28,7 @@
 				<h4>Departments</h4>
 				<div id="myData"></div>
 				<br>
-				
-				<a id="job-view" href="#"><b>view more</b></a>
+				<a id="job-view" href="#" onclick="displayAll()"><b>view more</b></a>
 				
 			</div>
 		</div>
@@ -293,19 +292,38 @@
 							
 								var div = document.createElement("div");
 								div.className="left-panel";
+								var count=0;
 								for (const key of Object.keys(dept)) 
 								{
-    								div.innerHTML+=`<p class='filters' onclick='getFilterData("${key}","department")'> ${key} (${dept[key]})</p>`;
+									if(count<8){
+									div.innerHTML+=`<p class='filters' style='display:block;' onclick='getFilterData("${key}","department")'> ${key} (${dept[key]})</p>`;
+								}
+									else{
+									div.innerHTML+=`<p class='filters' style='display:none;' onclick='getFilterData("${key}","department")'> ${key} (${dept[key]})</p>`;
+
+									}
 								}	
 								div.innerHTML+="<br><a id='dept-view' href='#'><b>view more departments</b></a><br><br><h3> Office </h3><br>";
 								for (const key of Object.keys(offices)) 
 								{
-									div.innerHTML+=`<p class='filters' onclick='getFilterData("${key}","office")'> ${key} (${offices[key]})</p>`;
+									if(count<8){
+									div.innerHTML+=`<p class='filters' style='display:block;' onclick='getFilterData("${key}","office")'> ${key} (${offices[key]})</p>`;
+									}
+									else{
+									div.innerHTML+=`<p class='filters' style='display:none;'  onclick='getFilterData("${key}","office")'> ${key} (${offices[key]})</p>`;
+
+									}
 								}
 								div.innerHTML+="<br><br><br> <h3> Job Titles </h3><br>";
 								for (const key of Object.keys(jobs))
-								 {
-									div.innerHTML+=`<p class='filters' onclick='getFilterData("${key}","jobTitle")'> ${key} (${jobs[key]})</p>`;
+								{
+									if(count<8){
+									div.innerHTML+=`<p class='filters' style='display:block;' onclick='getFilterData("${key}","jobTitle")'> ${key} (${jobs[key]})</p>`;
+									}
+									else{
+										div.innerHTML+=`<p class='filters' style='display:none;' onclick='getFilterData("${key}","jobTitle")'> ${key} (${jobs[key]})</p>`;
+									}
+									count+=1;
 								}
 								mainContainer.appendChild(div);
 						}
@@ -519,6 +537,16 @@
 						if (flag==0)
 							NameErr.innerHTML='<br>';
 					}
+					function displayAll()
+					{
+						let elements=document.getElementsByClassName('filters');
+						for (i in elements)
+						{
+							elements[i].style.display='block';
+							
+						}
+						
+					}
 					function addNewEmployee()
 					{
 					
@@ -579,11 +607,14 @@
 					}
 					function openForm() 
 					{
+					
 					document.getElementById("container").style.filter="blur(12px)";
 					document.getElementById("myForm").style.display = "block";
+					document.getElementById("employee-details").reset();
 					}
 					function closeForm() 
 					{
+						
 						document.getElementById("container").style.removeProperty('filter');
 						document.getElementById("myForm").style.display = "none";
 					}
@@ -628,6 +659,7 @@
 						clickedCard["skypeId"]=document.getElementById("NewSkypeId").value;
 						clickedCard["pic"]=document.getElementById("selectedFile").innerHTML;
 						displayCards(employeeData);
+						appendData(employeeData);
 						if(!flag)
 						{
 							
