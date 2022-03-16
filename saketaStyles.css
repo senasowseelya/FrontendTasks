@@ -160,6 +160,11 @@ ul
   font-size: 14px;;
   text-decoration: none;
 }
+#job-view ,#office-view,#dept-view
+{
+  display:None;
+  color:#00B1FC;
+}
 .row1
 {
 	width:100%;

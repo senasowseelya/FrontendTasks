@@ -28,7 +28,9 @@
 				<h4>Departments</h4>
 				<div id="myData"></div>
 				<br>
-				<a class="view-more" href="#"><b>view more</b></a>
+				
+				<a id="job-view" href="#"><b>view more</b></a>
+				
 			</div>
 		</div>
 		<div class="right-div">
@@ -284,6 +286,10 @@
 									else
 									jobs[data[i].jobTitle]=1;
 								}
+								
+								if(Object.keys(jobs).length>8)
+								document.getElementById("job-view").style.display='block';
+								
 							
 								var div = document.createElement("div");
 								div.className="left-panel";
@@ -291,7 +297,7 @@
 								{
     								div.innerHTML+=`<p class='filters' onclick='getFilterData("${key}","department")'> ${key} (${dept[key]})</p>`;
 								}	
-								div.innerHTML+="<br><br><br><h3> Office </h3><br>";
+								div.innerHTML+="<br><a id='dept-view' href='#'><b>view more departments</b></a><br><br><h3> Office </h3><br>";
 								for (const key of Object.keys(offices)) 
 								{
 									div.innerHTML+=`<p class='filters' onclick='getFilterData("${key}","office")'> ${key} (${offices[key]})</p>`;
@@ -357,6 +363,7 @@
 					}
 					
 					
+					
 					function getSearchValue()
 					{
 						var requiredData=employeeData;
@@ -408,7 +415,7 @@
 						displayCards(filterNames);
 					}
 					displayCards(employeeData);
-
+					
 					function displayUserName()
 					{
 						document.getElementById("userName").innerHTML=employeeData[0].firstName+" "+employeeData[0].lastName;
