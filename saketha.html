@@ -64,7 +64,7 @@
 				<div class="form-popup" id="myForm">
 					<form class="form-container" id="employee-details" method="POST">
 					<h2 class="add-emplyee-heading">Add Employee</h2>
-					<div class="left-details">
+					<div id="left-fields" class="left-details">
 						<label class="label" for="fname">FirstName:</label>
 					    <div id="FirstNameError"></div>
 					    <input type="text" placeholder="Enter First Name" name="fname" id="FirstName" onchange="setPreferredName()"  required>
@@ -82,7 +82,7 @@
 						<br>
 						<button  type="button" class="btn" onclick="addNewEmployee()">Add Employee</button>
 					</div>
-					<div class="right-details"	>
+					<div id="right-fields" class="right-details"	>
 						<label class="label" for="lname">LastName:</label>
 						<div id="LastNameError"></div>
 						<input type="text" placeholder="Enter Last Name" name="lname" id="LastName" onchange="setPreferredName()" required>
@@ -108,7 +108,7 @@
 				<form class="form-container" id="edit-employee-details" method="POST">
 				<h2 class="add-emplyee-heading">Edit Employee Details</h2>
 				<br>
-				<div class="left-details">
+				<div  id='edit-left-fields' class="left-details">
 				  	<label class="label" for="fname">First Name:</label>
 					<div id="NewFirstNameError"></div>
 					<input type="text" placeholder="Enter First Name" name="fname" id="NewFirstName"  required>
@@ -128,7 +128,7 @@
 					<br>
 					<button  type="button" class="btn" onclick="SaveChanges()">Save Changes</button>
 				</div>
-				<div class="right-details"	>
+				<div id='edit-right-fields' class="right-details"	>
 					<label class="label" for="lname">Last Name:</label>
 					<div id="NewLastNameError"></div>
 					<input type="text" placeholder="Enter Last Name" name="lname" id="NewLastName"  required>
@@ -472,7 +472,10 @@
 							details.className="details";
 							card.appendChild(details);
 							
-							card.addEventListener("click", function() { clickedCard=data[i];openeditEmployeeForm(data[i]);});
+							card.addEventListener("click", function() { 
+								clickedCard=data[i];
+								openeditEmployeeForm(data[i]);
+							});
 							cardsContainer.appendChild(card);
 						}
 					}
@@ -498,7 +501,7 @@
 						var Name=document.getElementById(idName).value;
 						var errorDivision=idName+"Error"; 
 						NameErr=document.getElementById(errorDivision);
-						NameErr.innerHTML="<br>";
+						NameErr.innerHTML="";
 						if(Name=="")
 						{
 								NameErr.innerHTML="Required";
@@ -535,16 +538,20 @@
 							}
 						}
 						if (flag==0)
-							NameErr.innerHTML='<br>';
+							NameErr.innerHTML='';
 					}
 					function displayAll()
 					{
+						document.getElementById("job-view").style.display='none';
 						let elements=document.getElementsByClassName('filters');
 						for (i in elements)
 						{
+							console.log(elements[i]);
 							elements[i].style.display='block';
 							
 						}
+						
+
 						
 					}
 					function addNewEmployee()
@@ -611,12 +618,32 @@
 					document.getElementById("container").style.filter="blur(12px)";
 					document.getElementById("myForm").style.display = "block";
 					document.getElementById("employee-details").reset();
+					
+					
+					
+
 					}
 					function closeForm() 
 					{
 						
 						document.getElementById("container").style.removeProperty('filter');
 						document.getElementById("myForm").style.display = "none";
+						let errorDivisions =document.getElementById("left-fields").children;
+						for(let child of errorDivisions)
+						{
+							if(child.id.includes('Error'))
+							{
+								child.innerHTML=''; 
+							}
+						}
+						errorDivisions =document.getElementById("right-fields").children;
+						for(let child of errorDivisions)
+						{
+							if(child.id.includes('Error'))
+							{
+								child.innerHTML=''; 
+							}
+						}
 					}
 					function openeditEmployeeForm(data)
 					{
@@ -648,6 +675,10 @@
 						validate("NewOffice");
 						validate("NewDepartment");
 						validate("NewPhoneNumber");
+						
+						appendData(employeeData);
+						if(!flag)
+						{
 						clickedCard["firstName"]=document.getElementById("NewFirstName").value;
 						clickedCard["lastName"]=document.getElementById("NewLastName").value;
 						clickedCard["PreferredName"]=document.getElementById("NewPreferredName").value;
@@ -659,9 +690,6 @@
 						clickedCard["skypeId"]=document.getElementById("NewSkypeId").value;
 						clickedCard["pic"]=document.getElementById("selectedFile").innerHTML;
 						displayCards(employeeData);
-						appendData(employeeData);
-						if(!flag)
-						{
 							
 							closeEditEmployeeForm();
 						}
@@ -676,6 +704,22 @@
 					{
 					document.getElementById("container").style.removeProperty('filter');
 					document.getElementById("editEmployeeForm").style.display = "none";
+					let errorDivisions =document.getElementById("edit-left-fields").children;
+						for(let child of errorDivisions)
+						{
+							if(child.id.includes('Error'))
+							{
+								child.innerHTML=''; 
+							}
+						}
+						errorDivisions =document.getElementById("edit-right-fields").children;
+						for(let child of errorDivisions)
+						{
+							if(child.id.includes('Error'))
+							{
+								child.innerHTML=''; 
+							}
+						}
 				}
 			</script>						
 	</body>
