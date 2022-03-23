@@ -1,0 +1,163 @@
+<html>
+    <head>
+        <title>Saketa</title>
+        <link rel="stylesheet" href="saketaStyles.css">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/solid.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+		<script src="saketha.js"></script>
+	</head>
+    <body id="body" onload="onLoad()">
+		<div id="container">
+        <div class="header">
+			<div class="left">
+            <div class="saketa"><img class="saketa-img" src="saketa.png"></div>
+            <div class="tag">
+			<h2 class="emp-dir-heading">Employee Directory</h2>
+            <h5 class="tagline">The Ultimate People Directory Experience</h5>
+			</div>
+			</div>
+			<div class="welcome">
+				<div class="child1"><h2>Welcome,</h2></div>
+				<div class="child2" id="userName"><h3></h3></div>
+				<img src="Antony.png" class="profile">
+			</div>
+		</div>
+		<div class="line"></div>
+		<br>
+		<div class="left-div">
+			<div id="left-content">
+				<h4>Departments</h4>
+				<div id="myData"></div>
+				<br>
+				<a id="job-view" href="#" onclick="displayAll()"><b>view more</b></a>
+				
+			</div>
+		</div>
+		<div class="right-div">
+			<div class="row1">
+				
+				<div id="buttonsContainer"></div>
+				<br>
+				<div class="search-container">
+					<form method="Post" >
+					  <label  class="search-label" for="search"><b>Search</b></label>
+					  <input  class="search" type="text" placeholder="Enter any Keyword" name="search" id="search" onkeyup="getSearchValue()">
+					  <input class="clear" type="reset" value="Clear" onclick="clearAll()">
+					
+				</div>
+				<div class="for-filter">
+					  <label for="filter-by"><b>Filter by</b></label>
+					  <select onchange="getSearchValue()" name="filter" id="filter">
+					  <option value="firstName">FirstName</option>
+					  <option value="lastName">LastName</option>
+					</select>
+					</form>
+				</div>
+				<button class="open-button" onclick="openForm()">Add Employee</button>
+				</div>
+				<p class="note"><b>Note:</b>Please use  the advanced filter options to refine your results</p>
+				<div class="row2">
+					<div id="cardsContainer"></div>
+				</div>	
+				</div>
+		</div>
+			<div class="add-employee">
+				<div class="form-popup" id="myForm">
+					<form class="form-container" id="employee-details" method="POST">
+					<h2 class="add-emplyee-heading">Add Employee</h2>
+					<div id="left-fields" class="left-details">
+						<label class="label" for="fname">FirstName:</label>
+					    <div id="FirstNameError"></div>
+					    <input type="text" placeholder="Enter First Name" name="fname" id="FirstName" onchange="setPreferredName()"  required>
+					  	<label class="label" for="pname">Preferred Name:</label>
+					  	<div id="PreferredNameError"></div>
+					 	<input type="text" placeholder='Enter Preferred Name' name="pname" id="PreferredName"  required>
+						<label  class="label"for="office">Office:</label>
+						<div id="OfficeError"></div>
+						<input type="text" placeholder="Enter Office" id="Office" name="office" required>
+						<label  class="label"for="jobTitle">Job Title:</label>
+						<div id="JobTitleError"></div>
+						<input type="text" placeholder="Enter job Title" id="JobTitle" name="JobTitle" required>
+						<label  class="label" for="skypeId">Skype Id:</label>
+						<input type="text" placeholder="Enter Skype ID" name="skypeId" required>
+						<br>
+						<button  type="button" class="btn" onclick="addNewEmployee()">Add Employee</button>
+					</div>
+					<div id="right-fields" class="right-details"	>
+						<label class="label" for="lname">LastName:</label>
+						<div id="LastNameError"></div>
+						<input type="text" placeholder="Enter Last Name" name="lname" id="LastName" onchange="setPreferredName()" required>
+						<label class="label" for="email">Email:</label>
+						<div id="EmailError"></div>
+						<input class="email" type="text" placeholder="Enter Email" name="email"  id="Email" required>
+						<label class="label" for="dept">Department:</label>
+						<div id="DepartmentError"></div>
+						<input type="text" placeholder="Enter Department"  id="Department" name="dept" required>
+						<label  class="label" for="phno">Phone Number:</label>
+						<div id="PhoneNumberError"></div>
+						<input type="text" placeholder="Enter Phone Number" id="PhoneNumber" name="phno" required>
+						<label  class="label"  for="photo">Upload Photo:</label>
+						<input  class="upload-pic" id="pic" type="file" accept="image/*" />
+						<br>
+						<br>
+					  	<button type="button"  class="btn-cancel" onclick="closeForm()">Cancel</button>
+					</div>
+					</form>
+				</div>
+			</div>
+			<div class="form-popup" id="editEmployeeForm">
+				<form class="form-container" id="edit-employee-details" method="POST">
+				<h2 class="add-emplyee-heading">Edit Employee Details</h2>
+				<br>
+				<div  id='edit-left-fields' class="left-details">
+				  	<label class="label" for="fname">First Name:</label>
+					<div id="NewFirstNameError"></div>
+					<input type="text" placeholder="Enter First Name" name="fname" id="NewFirstName"  required>
+					<label class="label" for="pname">Preferred Name:</label>
+					<div id="NewPreferredNameError"></div>
+					<input type="text" placeholder='Enter Preferred Name' name="pname" id="NewPreferredName"  disabled>
+					<label  class="label"for="office">Office:</label>
+					<div id="NewOfficeError"></div>
+					<input type="text" placeholder="Enter Office" id="NewOffice" name="office" disabled>
+					<label class="label" for="dept">Department:</label>
+					<div id="NewDepartmentError"></div>
+					<input type="text" placeholder="Enter Department"  id="NewDepartment" name="dept">
+					<label  class="label" for="skypeId">Skype Id:</label>
+					<div id="NewSkypeIdError"></div>
+					<input type="text" placeholder="Enter Skype ID" name="skypeId"  id="NewSkypeId" disabled>
+					<br>
+					<br>
+					<button  type="button" class="btn" onclick="SaveChanges()">Save Changes</button>
+				</div>
+				<div id='edit-right-fields' class="right-details"	>
+					<label class="label" for="lname">Last Name:</label>
+					<div id="NewLastNameError"></div>
+					<input type="text" placeholder="Enter Last Name" name="lname" id="NewLastName"  required>
+					<label class="label" for="email">Email:</label>
+					<div id="NewEmailError"></div>
+					<input class="email" type="text" placeholder="Enter Email" name="email"  id="NewEmail" disabled>
+					<label  class="label"for="jobTitle">Job Title:</label>
+					<div id="NewJobTitleError"></div>
+					<input type="text" placeholder="Enter job Title" id="NewJobTitle" name="JobTitle" required>
+					<label  class="label" for="phno">Phone Number:</label>
+					<div id="NewPhoneNumberError"></div>
+					<input type="text" placeholder="Enter Phone Number" id="NewPhoneNumber" name="phno" disabled>
+					<label  class="label" for="photo">Upload Photo:</label>
+					<div id="NewProfilePicError"></div>
+					<input  class="upload-pic1" id="NewProfilePic" type="file" onchange="changeSelectedFile()">
+					<button type="button" class="upload-image"><label for="NewProfilePic">Upload Image</label></button>
+					<label id="selectedFile"></label>
+					<br>
+					<br>
+					<br>
+					<button  type="button" class="btn-cancel" onclick="closeEditEmployeeForm()">Cancel</button>
+				</div>
+			    </form>
+			</div>
+			
+			
+
+
+
+	</body>
+</html>
